@@ -1,0 +1,86 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string ingresarNombre() {
+    string nombre;
+    cout << "Ingrese el nombre del cliente: ";
+    cin >> nombre;
+    return nombre;
+}
+
+string ingresarDireccion() {
+    string direccion;
+    cout << "Ingrese la direccion del cliente: ";
+    cin >> direccion;
+    return direccion;
+}
+
+string ingresarTelefono() {
+    string telefono;
+    cout << "Ingrese el telefono del cliente: ";
+    cin >> telefono;
+    return telefono;
+}
+
+float ingresarPrecio(const string& producto) {
+    float precio;
+    cout << "Ingrese el precio de " << producto << ": ";
+    cin >> precio;
+    return precio;
+}
+
+float calcularIVA(float total) {
+    return total * 0.15;
+}
+
+float calcularTotal(float precio1, float precio2, float precio3) {
+    return precio1 + precio2 + precio3;
+}
+
+int main() {
+    int opcion;
+    string nombre, direccion, telefono;
+    float precio1 = 0, precio2 = 0, precio3 = 0, total = 0, iva = 0, totalFactura = 0;
+
+    while (true) {
+        cout << "\nMENU DE FACTURACION" << endl;
+        cout << "1. Ingresar datos del cliente" << endl;
+        cout << "2. Ingresar productos y precios" << endl;
+        cout << "3. Calcular total de la factura" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if (opcion == 1) {
+            nombre = ingresarNombre();
+            direccion = ingresarDireccion();
+            telefono = ingresarTelefono();
+        } else if (opcion == 2) {
+            precio1 = ingresarPrecio("Producto 1");
+            precio2 = ingresarPrecio("Producto 2");
+            precio3 = ingresarPrecio("Producto 3");
+        } else if (opcion == 3) {
+            total = calcularTotal(precio1, precio2, precio3);
+            iva = calcularIVA(total);
+            totalFactura = total + iva;
+            cout << "\nFactura:" << endl;
+            cout << "Cliente: " << nombre << endl;
+            cout << "Direccion: " << direccion << endl;
+            cout << "Telefono: " << telefono << endl;
+            cout << "Precio producto 1: " << precio1 << endl;
+            cout << "Precio producto 2: " << precio2 << endl;
+            cout << "Precio producto 3: " << precio3 << endl;
+            cout << "Total: " << total << endl;
+            cout << "IVA (15%): " << iva << endl;
+            cout << "Total a pagar: " << totalFactura << endl;
+        } else if (opcion == 4) {
+            cout << "Saliendo del programa..." << endl;
+            break;
+        } else {
+            cout << "Opcion no valida, por favor ingrese una opcion del 1 al 4" << endl;
+        }
+    }
+
+    return 0;
+}
