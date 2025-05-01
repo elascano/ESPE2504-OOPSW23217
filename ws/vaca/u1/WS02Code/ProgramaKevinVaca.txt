@@ -1,0 +1,71 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+void limpiarPantalla() {
+    system("cls");
+}
+
+void verificarDivisibilidadYParidad(int numero) {
+    if (numero % 3 == 0) {
+        cout << numero << " es divisible por 3." << endl;
+    }
+    if (numero % 5 == 0) {
+        cout << numero << " es divisible por 5." << endl;
+    }
+    if (numero % 7 == 0) {
+        cout << numero << " es divisible por 7." << endl;
+    }
+
+    if (numero % 2 == 0) {
+        cout << numero << " es un numero par." << endl;
+    } else {
+        cout << numero << " es un numero impar." << endl;
+    }
+}
+
+void mostrarNumerosDivisibles (int numeros[], int tamano) {
+    cout << "Numeros que cumplen con la division exacta (por 3, 5 o 7): " << endl;
+    for (int i = 0; i < tamano; ++i) {
+        if (numeros[i] % 3 == 0 || numeros[i] % 5 == 0 || numeros[i] % 7 == 0) {
+            cout << numeros[i] << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    const int cantidadNumeros = 3;
+    int numeros[cantidadNumeros];
+    char respuestaUsuario;
+
+    cout << "Divisibilidad de 3, 5, 7 Y Paridad" << endl;
+
+    do {
+        for (int i = 0; i < cantidadNumeros; ++i) {
+            cout << "Ingrese el numero " << (i + 1) << ": ";
+            cin >> numeros[i];
+        }
+
+        limpiarPantalla();
+
+        for (int i = 0; i < cantidadNumeros; ++i) {
+            verificarDivisibilidadYParidad(numeros[i]);
+        }
+
+        cout << "¿Desea ver los numeros que cumplen con la division exacta (S/N)? ";
+        cin >> respuestaUsuario;
+
+        if (respuestaUsuario == 'S' || respuestaUsuario == 's') {
+            mostrarNumerosDivisibles(numeros, cantidadNumeros);  // Llamada corregida
+        }
+
+        cout << "¿Desea ingresar otros numeros (S/N)? ";
+        cin >> respuestaUsuario;
+
+        limpiarPantalla();
+
+    } while (respuestaUsuario == 'S' || respuestaUsuario == 's');
+
+    return 0;
+}
