@@ -1,3 +1,3 @@
 # ESPE2504-OOPSW23217
-Astudillo Ortga Gerald Israel Exams
+Astudillo Ortga Gerald Israel Homeworks U2
 OOP course ESPE - DCCO for Software Engineering students of the 202551 semester
