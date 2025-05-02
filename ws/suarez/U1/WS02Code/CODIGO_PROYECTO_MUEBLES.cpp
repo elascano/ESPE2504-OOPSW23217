@@ -1,0 +1,313 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <limits>
+#include <conio.h>
+
+using namespace std;
+void limpiarPantalla() {
+    system("CLS");
+}
+
+struct Usuario {
+    string username;
+    string password;
+};
+struct SolicitudServicio {
+    string servicio;
+    string nombre;
+    string apellido;
+    string domicilio;
+    string fecha;
+    string hora;
+    string celular;
+};
+vector<Usuario> admins;
+vector<Usuario> clientes;
+vector<string> catalogo = {"Sofa de cuero", "Mesa de madera", "Silla ergonomica", "Estante modular"};
+vector<string> servicios = {"Limpieza", "Reparacion"};
+vector<SolicitudServicio> solicitudes;
+
+// Función para validar entrada numérica
+void validarEntrada(int &variable) {
+    while (!(cin >> variable)) {
+        cout << "Entrada invalida. Por favor ingrese un numero valido: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
+
+// Guardar usuarios en archivo
+template<typename T>
+void guardarUsuarios(const string& archivo, const vector<T>& usuarios) {
+    ofstream file(archivo);
+    for (const auto& user : usuarios) {
+        file << user.username << " " << user.password << "\n";
+    }
+}
+
+// Cargar usuarios desde archivo
+template<typename T>
+void cargarUsuarios(const string& archivo, vector<T>& usuarios) {
+    ifstream file(archivo);
+    string username, password;
+    while (file >> username >> password) {
+        usuarios.push_back({username, password});
+    }
+}
+
+// Leer contraseña con asteriscos
+string leerPassword() {
+    string password;
+    char ch;
+    while ((ch = _getch()) != '\r') { // '\r' es Enter
+        if (ch == '\b' && !password.empty()) {
+            password.pop_back();
+            cout << "\b \b";
+        } else if (ch != '\b') {
+            password += ch;
+            cout << '*';
+        }
+    }
+    cout << endl;
+    return password;
+}
+
+void registrarUsuario(vector<Usuario>& usuarios, const string& archivo) {
+    cout << "Ingrese nombre de usuario: ";
+    string username;
+    cin >> username;
+    cout << "Ingrese contrasena: ";
+    string password = leerPassword();
+
+    usuarios.push_back({username, password});
+    guardarUsuarios(archivo, usuarios);
+    cout << "Usuario registrado exitosamente.\n";
+}
+
+
+// segunda modificacion
+void solicitarServicio() {
+    limpiarPantalla();
+    cout << "Seleccione un servicio:";
+    for (size_t i = 0; i < servicios.size(); i++) {
+        cout << i + 1 << ". " << servicios[i] << "\n";
+    }
+
+    int eleccion;
+    validarEntrada(eleccion);
+    if (eleccion < 1 || eleccion > (int)servicios.size()) {
+        cout << "Opcion no valida.\n";
+        return;
+    }
+
+    SolicitudServicio solicitud;
+    solicitud.servicio = servicios[eleccion - 1];
+    cin.ignore();
+
+    cout << "Ingrese su nombre: ";
+    getline(cin, solicitud.nombre);
+    cout << "Ingrese su apellido: ";
+    getline(cin, solicitud.apellido);
+    cout << "Ingrese su domicilio: ";
+    getline(cin, solicitud.domicilio);
+    cout << "Ingrese la fecha deseada (DD/MM/AAAA): ";
+    getline(cin, solicitud.fecha);
+    cout << "Ingrese la hora deseada (HH:MM): ";
+    getline(cin, solicitud.hora);
+    cout << "Ingrese su numero de celular: ";
+    getline(cin, solicitud.celular);
+
+    solicitudes.push_back(solicitud);
+    cout << "Solicitud de servicio registrada exitosamente.\n";
+
+}
+
+
+void mostrarSolicitudes() {
+    cout << "\nSolicitudes de Servicios:\n";
+    for (const auto& solicitud : solicitudes) {
+        cout << "Servicio: " << solicitud.servicio << "\n";
+        cout << "Nombre: " << solicitud.nombre << " " << solicitud.apellido << "\n";
+        cout << "Domicilio: " << solicitud.domicilio << "\n";
+        cout << "Fecha: " << solicitud.fecha << "\n";
+        cout << "Hora: " << solicitud.hora << "\n";
+        cout << "Celular: " << solicitud.celular << "\n";
+        cout << "-------------------------\n";
+    }
+}
+// segunda modificacion
+
+
+void mostrarCatalogoYServicios() {
+    limpiarPantalla();
+    cout << "\nVisualizacion de Lista de Catalogo y Servicios\n";
+    cout << "Catalogo de Muebles:\n";
+    for (size_t i = 0; i < catalogo.size(); i++) {
+        cout << i + 1 << ". " << catalogo[i] << "\n";
+    }
+    cout << "\nServicios Disponibles:\n";
+    for (size_t i = 0; i < servicios.size(); i++) {
+        cout << i + 1 << ". " << servicios[i] << "\n";
+    }
+    cout << "\n";
+}
+// aqui est ala modificacion
+void comprarProducto() {
+    cout << "Seleccione un producto para ver opciones:\n";
+    for (size_t i = 0; i < catalogo.size(); i++) {
+        cout << i + 1 << ". " << catalogo[i] << "\n";
+    }
+
+    int eleccion;
+    validarEntrada(eleccion);
+    if (eleccion < 1 || eleccion > (int)catalogo.size()) {
+        cout << "Opcion no valida.\n";
+        return;
+    }
+
+    string productoSeleccionado = catalogo[eleccion - 1];
+    cout << "Opciones disponibles para " << productoSeleccionado << ":\n";
+    cout << "1. " << productoSeleccionado << " Basico - $100\n";
+    cout << "2. " << productoSeleccionado << " Estandar - $200\n";
+    cout << "3. " << productoSeleccionado << " Premium - $300\n";
+
+    cout << "Seleccione la opcion que desea comprar: ";
+    int opcionCompra;
+    validarEntrada(opcionCompra);
+    if (opcionCompra < 1 || opcionCompra > 3) {
+        cout << "Opcion no valida.\n";
+        return;
+    }
+
+    cout << "Usted ha hecho una compra exitosa de " << productoSeleccionado << "!\n";
+}
+
+
+
+
+void modificarCatalogoYServicios() {
+    int opcion;
+    do {
+        cout << "\n=== Modificar Catalogo y Servicios ===\n";
+        cout << "1. Agregar al catalogo\n";
+        cout << "2. Eliminar del catalogo\n";
+        cout << "3. Agregar a servicios\n";
+        cout << "4. Eliminar de servicios\n";
+        cout << "5. Volver al menu principal\n";
+        cout << "Seleccione una opcion: ";
+        validarEntrada(opcion);
+        cin.ignore();
+
+        if (opcion == 1) {
+            cout << "Ingrese el nombre del nuevo articulo: ";
+            string articulo;
+            getline(cin, articulo);
+            catalogo.push_back(articulo);
+            cout << "Articulo agregado exitosamente.\n";
+        } else if (opcion == 2) {
+            cout << "Ingrese el numero del articulo a eliminar: ";
+            int eliminar;
+            validarEntrada(eliminar);
+            if (eliminar > 0 && eliminar <= (int)catalogo.size()) {
+                catalogo.erase(catalogo.begin() + eliminar - 1);
+                cout << "Articulo eliminado exitosamente.\n";
+            } else {
+                cout << "Opcion no valida.\n";
+            }
+        } else if (opcion == 3) {
+            cout << "Ingrese el nombre del nuevo servicio: ";
+            string servicio;
+            getline(cin, servicio);
+            servicios.push_back(servicio);
+            cout << "Servicio agregado exitosamente.\n";
+        } else if (opcion == 4) {
+            cout << "Ingrese el numero del servicio a eliminar: ";
+            int eliminar;
+            validarEntrada(eliminar);
+            if (eliminar > 0 && eliminar <= (int)servicios.size()) {
+                servicios.erase(servicios.begin() + eliminar - 1);
+                cout << "Servicio eliminado exitosamente.\n";
+            } else {
+                cout << "Opcion no valida.\n";
+            }
+        }
+    } while (opcion != 5);
+}
+
+void iniciarSesion() {
+
+    cout << "Ingrese nombre de usuario: ";
+    string username;
+    cin >> username;
+    cout << "Ingrese contrasena: ";
+    string password = leerPassword();
+
+    for (const auto& admin : admins) {
+        if (admin.username == username && admin.password == password) {
+            cout << "Inicio de sesion exitoso como Administrador.\n";
+            mostrarCatalogoYServicios();
+            mostrarSolicitudes();
+            modificarCatalogoYServicios();
+            return;
+        }
+    }
+    for (const auto& cliente : clientes) {
+        if (cliente.username == username && cliente.password == password) {
+            cout << "Inicio de sesion exitoso como Cliente.\n";
+            mostrarCatalogoYServicios();
+              int opcion;
+            do {
+                cout << "1. Comprar un producto\n";
+                cout << "2. Solicitar un servicio\n";
+                cout << "3. Volver al menu principal\n";
+                cout << "Seleccione una opcion: ";
+             validarEntrada(opcion);
+
+                if (opcion == 1) {
+                    comprarProducto();
+                } else if (opcion == 2) {
+                    solicitarServicio();
+                }
+            } while (opcion != 3);
+            return;
+        }
+    }
+    cout << "Usuario o contrasena incorrectos.\n";
+}
+
+void menu() {
+    cargarUsuarios("usuarios_admins.txt", admins);
+    cargarUsuarios("usuarios_clientes.txt", clientes);
+
+    int opcion;
+    do {
+            limpiarPantalla();
+            cout << "Muebles M&L Menu de Inicio" <<endl;
+            cout << "Escoja una de estas opciones porfavor" << endl;
+        cout << "1. Registrar Administrador\n2. Registrar Cliente\n3. Iniciar Sesion\n4. Salir\nSeleccione una opcion: ";
+        validarEntrada(opcion);
+        switch (opcion) {
+            case 1:
+                registrarUsuario(admins, "usuarios_admins.txt");
+                break;
+            case 2:
+                registrarUsuario(clientes, "usuarios_clientes.txt");
+                break;
+            case 3:
+                iniciarSesion();
+                break;
+            case 4:
+                cout << "Saliendo...\n";
+                break;
+            default:
+                cout << "Opcion invalida.\n";
+        }
+    } while (opcion != 4);
+}
+
+int main() {
+    menu();
+    return 0;
+}
