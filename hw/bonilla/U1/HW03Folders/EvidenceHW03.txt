@@ -1,0 +1,12 @@
+The following GitBash commands were used in this HW:
+
+git pull
+ls -l
+mkdir U1
+mkdir U2
+mkdir U3
+mkdir README.md (for each folder)
+git status
+git add .
+git commit -m "Folders - U1 to U3"
+git push
