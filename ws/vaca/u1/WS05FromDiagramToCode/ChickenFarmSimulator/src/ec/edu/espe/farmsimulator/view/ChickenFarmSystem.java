@@ -35,7 +35,5 @@ public class ChickenFarmSystem {
         System.out.println("Chicken egg2 is -->" + egg2.getId());
         egg3.setId(23);
         System.out.println("Chicken egg2 is -->" + egg3.getId());
-
-   
     }
 }
