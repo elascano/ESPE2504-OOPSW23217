@@ -1,5 +1,5 @@
-import { Egg } from "../Model/Egg.js";
-import { Poop } from "../Model/Poop.js";
+import { Egg } from "../ec.espe.edu.model/Egg.js";
+import { Poop } from "../ec.espe.edu.model/Poop.js";
 
 function main() {
     console.log("This is a Chicken Farm Simulator");
