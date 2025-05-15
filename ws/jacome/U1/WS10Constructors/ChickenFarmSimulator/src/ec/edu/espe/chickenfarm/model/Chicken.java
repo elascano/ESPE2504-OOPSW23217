@@ -4,22 +4,25 @@ import java.util.Date;
 
 /**
  *
- * @author Jorge Fuentes
+ * @author LABS-ESPE Micaela Jácome
  */
 public class Chicken {
+
     private int id;
     private String name;
     private String color;
     private int age;
     private boolean molting;
     private Date bornOnDate;
-    
+
     @Override
     public String toString() {
         return "Chicken{" + "id=" + getId() + ", name=" + getName() + ", color=" + getColor() + ", age=" + getAge() + ", molting=" + isMolting() + ", bornOnDate=" + getBornOnDate() + '}';
     }
+
     
-    public Chicken(int id, String name, String color, int age, boolean molting, Date bornOnDate){
+
+    public Chicken(int id, String name, String color, int age, boolean molting, Date bornOnDate) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -28,18 +31,20 @@ public class Chicken {
         this.bornOnDate = bornOnDate;
     }
     
-    public void doStuff() {
+
+    
+    public void duStuff() {
         System.out.println("Chicken is ...");
         cluck();
         wander();
     }
-    
+
     private void cluck() {
         System.out.println("chicklen name --> " + getName());
         System.out.println("chicklen date --> " + getBornOnDate());
         System.out.println(" The chicken " + getId() + " is clucking");
     }
-    
+
     private void wander() {
         System.out.println(" The chicken " + getId() + " is wandering");
     }
@@ -51,7 +56,7 @@ public class Chicken {
     private void drink() {
         System.out.println(" The chicken " + getId() + " is drinking");
     }
-    
+
     /**
      * @return the id
      */
@@ -135,6 +140,4 @@ public class Chicken {
     public void setBornOnDate(Date bornOnDate) {
         this.bornOnDate = bornOnDate;
     }
-    
-    
 }
