@@ -21,6 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 replay_pid*
 <<<<<<< HEAD
 /ws/chicaiza/u1/WS05FromDiagramToCode/ChickenFarmSimulator/nbproject/private/
@@ -43,6 +44,14 @@ replay_pid*
 /hw/bonilla/U1/HW08HelloWord/HelloWord/nbproject/private/
 /hw/bonilla/U1/HW08HelloWord/HelloWord/build/
 >>>>>>> edd9a3c6eeab90c8e2f3883471e99593116a4ebf
+<<<<<<< HEAD
 >>>>>>> 218a981ce05768bf18b28ede6265f78a55569907
 /ws/vaca/u1/WS05FromDiagramToCode/HelloWorld.java/nbproject/private/
 /ws/vaca/U1/WS05FromDiagramToCode/HelloWorld.java/nbproject/private/
+=======
+/ws/chicaiza/u1/WS05FromDiagramToCode/CraftMarket/nbproject/private/
+/ws/chicaiza/u1/WS05FromDiagramToCode/CraftMarket/build/
+=======
+replay_pid*
+>>>>>>> 0dd8f55d19e872dbd442cdeec625a4cfbf99ab05
+>>>>>>> afc8d35bb9537bf9b8d61f0effe10aa96bfe0aa7
