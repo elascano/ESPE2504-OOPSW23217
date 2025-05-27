@@ -6,8 +6,6 @@ package helloworld.java;
  */
 public class HelloWorldJava {
     public static void main(String[] args) {
-            System.out.println("Hello World.");
-            System.out.println("Hello Programmers, I am Kevin.");
-
+            System.out.print("Hello Programmers, I am Kevin Vaca");
     }
 }
