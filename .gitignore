@@ -22,6 +22,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 <<<<<<< HEAD
+<<<<<<< HEAD
 replay_pid*
 <<<<<<< HEAD
 /ws/andrade/u1/WS05ClassNetBeans/JavaApplication1/nbproject/private/
@@ -73,3 +74,6 @@ replay_pid*
 /ws/vaca/U1/WS10Constructors/ChickenFarmSimulator.java/dist/
 /ws/vaca/U1/WS10Constructors/ChickenFarmSimulator.java/nbproject/private/
 /hw/vaca/U1/HW08HelloWord/HelloWorld.java/build/
+=======
+
+>>>>>>> d0ca561922a6b4b963629a673182e3e0fb9adfca
