@@ -1,0 +1,18 @@
+<students>
+    <student>
+        <id>1</id>
+        <lastName>Lascano</lastName>
+        <firstName>Edison</firstName>
+        <age>54</age>
+        <salary>4078.86</salary>
+    </student>
+
+    <student>
+        <id>2</id>
+        <lastName>Andrade</lastName>
+        <firstName>Julio</firstName>
+        <age>20</age>
+        <salary>0</salary>
+    </student>
+
+</students>
