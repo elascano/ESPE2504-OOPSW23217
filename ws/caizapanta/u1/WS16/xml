@@ -1,0 +1,12 @@
+<students>
+  <student>
+    <name>Edison</name>
+    <lastname>Lascano</lastname>
+    <age>54</age>
+  </student>
+  <student>
+    <name>Tammy</name>
+    <lastname>Caizapanta</lastname>
+    <age>20</age>
+  </student>
+</students>
