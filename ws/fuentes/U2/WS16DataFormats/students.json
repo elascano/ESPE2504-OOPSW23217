@@ -1,0 +1,6 @@
+{"students":
+[
+    {"id":1,"lastname":"lascano","firstname":"edison","age":54,"salary":4000},
+    {"id":2,"lastname":"fuentes","firstname":"jorge","age":21,"salary":0}
+]
+}

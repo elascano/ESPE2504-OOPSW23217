@@ -1,0 +1,6 @@
+{"students":
+    [
+        {"id":1,"lastanme":"lascano","firstname":"edison","age":54,"salary":407.86},
+        {"id":2,"lastanme":"jacome","firstname":"micaela","age":19,"salary":0.0}
+    ]
+}
