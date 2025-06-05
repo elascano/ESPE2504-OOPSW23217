@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "lastName": "Astudillo",
+        "age": 20,
+        "salary": 400.0,
+        "name": "Gerald"
+    },
+    {
+        "id": 2,
+        "lastName": "Quirola",
+        "age": 19,
+        "salary": 400.0,
+        "name": "Camilo"
+    }
+]
