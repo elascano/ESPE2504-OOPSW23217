@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "David",
+    "age": 20,
+    "email": "davidbonilla188@gmail.com",
+    "phone": "0959505589",
+    "major": "Software Engeneering",
+    "gpa": 19,
+    "address": "Monserrat",
+    "gender": "Male",
+    "enrolled": true
+  }
+]
