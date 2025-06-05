@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ec.edu.espe.taxeslib.basicoperations","l":"BasicOperation"},{"p":"ec.edu.espe.taxeslib.taxes","l":"Tax"}];updateSearchResults();
