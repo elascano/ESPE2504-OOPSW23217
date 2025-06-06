@@ -1,0 +1,12 @@
+{
+  "id": "23",
+  "brand": "Shure",
+  "model": "SM58",
+  "type": "Dynamic",
+  "color": "Red",
+  "connection": "XLR",
+  "frequency": "50Hz-15kHz",
+  "sensitivity": "-54.5 dBv/Pa",
+  "impedance": "150 ohms",
+  "price": "87.90"
+}
