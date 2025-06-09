@@ -1,0 +1,54 @@
+[
+    {
+        "family": "Lamborghini HURACÁN",
+        "models": [
+            {
+                "model": "HURACÁN STO",
+                "powercv": 640,
+                "powerkw": 470,
+                "speed": 310
+            },
+            {
+                "model": "HURACÁN EVO SPIDER",
+                "powercv": 640,
+                "powerkw": 470,
+                "speed": 325
+            },
+            {
+                "model": "HURACÁN TECNICA",
+                "powercv": 640,
+                "powerkw": 470,
+                "speed": 325
+            },
+            {
+                "model": "HURACÁN  STERRATO ",
+                "powercv": 610,
+                "powerkw": 449,
+                "speed": 260
+            }
+        ]
+    },
+    {
+        "family": "Lamborghini URUS",
+        "models": [
+            {
+                "model": "URUS SE",
+                "powercv": 800,
+                "powerkw": 588,
+                "speed": 312
+            },
+            {
+                "model": "URUS S",
+                "powercv": 666,
+                "powerkw": 490,
+                "speed": 305
+            },
+            {
+                "model": "URUS PERFORMANTE",
+                "powercv": 666,
+                "powerkw": 490,
+                "speed": 306
+            }
+        ]
+    }
+]
