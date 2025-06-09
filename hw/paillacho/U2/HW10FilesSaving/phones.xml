@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<phones>
+  <phone>
+    <id>213</id>
+    <brand>Samsung</brand>
+    <model>S24</model>
+    <storage>64</storage>
+    <os>Android</os>
+  </phone>
+</phones>

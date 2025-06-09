@@ -1,0 +1,11 @@
+{
+  "phones": [
+    {
+      "id": "321",
+      "brand": "Applw",
+      "model": "15",
+      "storage": "64",
+      "os": "IOS"
+    }
+  ]
+}
