@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<cables>
+  <cable>
+    <id>1</id>
+    <brand>Atlas</brand>
+    <length>2</length>
+    <type>HDMI</type>
+  </cable>
+</cables>

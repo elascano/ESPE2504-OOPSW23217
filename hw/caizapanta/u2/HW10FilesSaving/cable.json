@@ -1,0 +1,10 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "brand": "Atlas",
+      "lenght": 2,
+      "type": "HDMI"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LamborghiniObject>
+  <Lamborghini>
+    <family>Lamborghini HURACÁN</family>
+    <models>
+      <model>
+        <modelName>HURACÁN STO</modelName>
+        <powercv>640</powercv>
+        <powerkw>470</powerkw>
+        <speed>310</speed>
+      </model>
+      <model>
+        <modelName>HURACÁN EVO SPIDER</modelName>
+        <powercv>640</powercv>
+        <powerkw>470</powerkw>
+        <speed>325</speed>
+      </model>
+      <model>
+        <modelName>HURACÁN TECNICA</modelName>
+        <powercv>640</powercv>
+        <powerkw>470</powerkw>
+        <speed>325</speed>
+      </model>
+      <model>
+        <modelName>HURACÁN STERRATO</modelName>
+        <powercv>610</powercv>
+        <powerkw>449</powerkw>
+        <speed>260</speed>
+      </model>
+    </models>
+  </Lamborghini>
+
+  <Lamborghini>
+    <family>Lamborghini URUS</family>
+    <models>
+      <model>
+        <modelName>URUS SE</modelName>
+        <powercv>800</powercv>
+        <powerkw>588</powerkw>
+        <speed>312</speed>
+      </model>
+      <model>
+        <modelName>URUS S</modelName>
+        <powercv>666</powercv>
+        <powerkw>490</powerkw>
+        <speed>305</speed>
+      </model>
+      <model>
+        <modelName>URUS PERFORMANTE</modelName>
+        <powercv>666</powercv>
+        <powerkw>490</powerkw>
+        <speed>306</speed>
+      </model>
+    </models>
+  </Lamborghini>
+</LamborghiniObject>
+
+<!--Created by Carlos -->
