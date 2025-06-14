@@ -1,0 +1,69 @@
+from pymongo import MongoClient
+import json
+import os
+
+# Conexión a MongoDB Atlas
+MONGO_URI = "mongodb+srv://mlquiroz:<Mlqh2006>@cluster0.vpeg1ly.mongodb.net/"
+client = MongoClient(MONGO_URI)
+
+# Selección de la base de datos y colección
+db = client["Maria"]
+coleccion = db["Person"]
+
+# Subir colección desde archivo JSON
+def subir_coleccion(ruta_archivo):
+    if not os.path.exists(ruta_archivo):
+        print("❌ Archivo no encontrado.")
+        return
+
+    with open(ruta_archivo, "r", encoding="utf-8") as f:
+        datos = json.load(f)
+
+    # Limpia la colección antes de subir (opcional)
+    coleccion.delete_many({})
+
+    # Inserta los datos (puede ser un dict o lista)
+    if isinstance(datos, list):
+        coleccion.insert_many(datos)
+    else:
+        coleccion.insert_one(datos)
+
+    print("✅ Colección subida correctamente.")
+
+# Descargar colección a archivo JSON
+def descargar_coleccion(ruta_destino):
+    documentos = list(coleccion.find())
+    for doc in documentos:
+        doc["_id"] = str(doc["_id"])  # Convertir ObjectId a str para guardar en JSON
+
+    with open(ruta_destino, "w", encoding="utf-8") as f:
+        json.dump(documentos, f, indent=4)
+
+    print(f"✅ Colección descargada como '{ruta_destino}'")
+
+# Menú interactivo
+def menu():
+    while True:
+        print("\n📁 MENÚ DE COLECCIÓN MONGO ATLAS")
+        print("1. Subir colección desde archivo JSON")
+        print("2. Descargar colección a archivo JSON")
+        print("3. Salir")
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            ruta = input("Ruta del archivo JSON a subir: ")
+            subir_coleccion(ruta)
+
+        elif opcion == "2":
+            destino = input("Ruta donde guardar la colección (ej. salida/person.json): ")
+            descargar_coleccion(destino)
+
+        elif opcion == "3":
+            print("👋 Saliendo del programa...")
+            break
+        else:
+            print("❌ Opción inválida, intenta de nuevo.")
+
+# Ejecutar menú
+if __name__ == "__main__":
+    menu()
