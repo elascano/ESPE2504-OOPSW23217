@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "brand": "Yamaha",
+    "model": "MG10XU",
+    "isDigital": false,
+    "numChannels": 10,
+    "price": 250.0
+  },
+  {
+    "id": 2,
+    "brand": "Behringer",
+    "model": "X32",
+    "isDigital": true,
+    "numChannels": 32,
+    "price": 2200.0
+  }
+]
