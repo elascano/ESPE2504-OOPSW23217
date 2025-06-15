@@ -77,7 +77,7 @@ public class FileManagerCellphone {
                             Updates.set("priceFinal", priceFinal)
                     )
             );
-
+            scanner.close();
             System.out.println("Cellphone updated successfully.");
         } else {
             System.out.println("Cellphone with ID " + id + " not found.");

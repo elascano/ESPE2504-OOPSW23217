@@ -70,6 +70,7 @@ public class Menu {
                 }
                 case 5 -> {
                     System.exit(0);
+                    scanner.close();
                 }
                 default -> System.out.println("Invalid option");
             }
