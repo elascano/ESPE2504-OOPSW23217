@@ -1,9 +1,10 @@
 import express from 'express';
 import {MongoClient} from 'mongodb';
+import 'dotenv/config';
 
 const app = express();
-const PORT = 8000;
-const MONGO_URL = 'mongodb+srv://KevinV593:KevinV593@cluster0.7ufczsp.mongodb.net/WarGame?retryWrites=true&w=majority&appName=Cluster0';
+const PORT = process.env.PORT;
+const MONGO_URL = process.env.MONGO_URL;
 
 app.get('/getStudents', async (req, res) => {
     const client = new MongoClient(MONGO_URL);
