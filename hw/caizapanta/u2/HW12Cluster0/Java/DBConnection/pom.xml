@@ -10,4 +10,10 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.dbconnection.DBConnection</exec.mainClass>
     </properties>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.10.1</version>
+    </dependency>
+    
 </project>
