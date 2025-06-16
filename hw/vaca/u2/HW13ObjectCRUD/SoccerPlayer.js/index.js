@@ -1,11 +1,11 @@
 import express from 'express';
-import {MongoClient, ObjectId} from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import 'dotenv/config';
 
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000; // Added default port
 const MONGO_URL = process.env.MONGO_URL;
 
 async function connectToDatabase() {
@@ -18,44 +18,39 @@ function getCollection(client) {
     return client.db('OOP').collection('SoccerPlayers');
 }
 
-async function getAllPlayers(client) {
+// Unified player lookup by _id
+async function getPlayerById(client, id) {
     const collection = getCollection(client);
-    return await collection.find({}).toArray();
+    try {
+        return await collection.findOne({ _id: new ObjectId(id) });
+    } catch (e) {
+        console.error('Invalid ID format:', id);
+        throw new Error("Invalid player ID format");
+    }
 }
 
-async function getPlayerByNumberId(client, id) {
-    const collection = getCollection(client);
-    return await collection.findOne({
-      id: parseInt(id) 
-    });
-}
-
-async function createPlayer(client, playerData) {
-    const collection = getCollection(client);
-    const result = await collection.insertOne(playerData);
-    return { ...playerData, _id: result.insertedId };
-}
-
-async function updatePlayer(client, id, updates) {
-    const collection = getCollection(client);
-    const result = await collection.updateOne(
-        { id: parseInt(id) },
-        { $set: updates }
-    );
-    return result.modifiedCount;
-}
-
-async function deletePlayer(client, id) {
-    const collection = getCollection(client);
-    const result = await collection.deleteOne({ id: parseInt(id) });
-    return result.deletedCount;
-}
-
-app.get('/getPlayers', async (req, res) => {
-  let client;
+// GET all players
+app.get('/players', async (req, res) => {
+    let client;
     try {
         client = await connectToDatabase();
-        const player = await getAllPlayers(client, req.params.id);
+        const players = await getCollection(client).find({}).toArray();
+        res.status(200).json(players);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    } finally {
+        if (client) await client.close();
+    }
+});
+
+// GET single player by _id
+app.get('/players/:id', async (req, res) => {
+    let client;
+    console.log(`Fetching player with ID: ${req.params.id}`);
+    
+    try {
+        client = await connectToDatabase();
+        const player = await getPlayerById(client, req.params.id);
         
         if (player) {
             res.status(200).json(player);
@@ -63,91 +58,17 @@ app.get('/getPlayers', async (req, res) => {
             res.status(404).json({ message: 'Player not found' });
         }
     } catch (error) {
-        console.error('Error:', error);
         res.status(400).json({ 
-            message: 'Invalid player ID',
-            details: 'ID must be a number (1, 2, 3...)'
+            message: error.message,
+            correctFormat: "24-character hex string",
+            example: "684f6e6bee5313ff4fc0211f"
         });
     } finally {
         if (client) await client.close();
     }
 });
 
-// GET single player
-app.get('/players/:id', async (req, res) => {
-    let client;
-
-    try {
-        client = await connectToDatabase();
-        const player = await getPlayerById(client, req.params.id);
-
-       if (player) {
-        res.status(200).json(player);
-        } else {
-            res.status(404).json({ message: 'Player not found' });
-        }
-
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(400).json({ 
-          message: 'Invalid player ID',
-          details: 'ID must be a number (1, 2, 3...)'
-        });
-    } finally {
-        if (client) await client.close();
-    }
-});
-
-// POST create player
-app.post('/players', async (req, res) => {
-    let client;
-
-    try {
-        client = await connectToDatabase();
-        const newPlayer = await createPlayer(client, req.body);
-        res.status(201).json(newPlayer);
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ message: 'Database error' });
-    } finally {
-        if (client) await client.close();
-    }
-});
-
-// PUT update player
-app.put('/players/:id', async (req, res) => {
-    let client;
-    try {
-        client = await connectToDatabase();
-        const modifiedCount = await updatePlayer(client, req.params.id, req.body);
-        modifiedCount
-            ? res.status(200).json({ message: 'Player updated' })
-            : res.status(404).json({ message: 'Player not found' });
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ message: 'Database error' });
-    } finally {
-        if (client) await client.close();
-    }
-});
-
-// DELETE player
-app.delete('/players/:id', async (req, res) => {
-    let client;
-    try {
-        client = await connectToDatabase();
-        const deletedCount = await deletePlayer(client, req.params.id);
-        deletedCount
-            ? res.status(200).json({ message: 'Player deleted' })
-            : res.status(404).json({ message: 'Player not found' });
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ message: 'Database error' });
-    } finally {
-        if (client) await client.close();
-    }
-});
-
+// Start server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
