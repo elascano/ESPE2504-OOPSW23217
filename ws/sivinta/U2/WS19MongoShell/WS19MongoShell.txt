@@ -1,0 +1,42 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\tammy\Documents\OOP\ESPE2504-OOPSW23217\ws\caizapanta\u2\WS19MongoShell> mongosh "mongodb+srv://cluster0.ircnkvg.mongodb.net/" --apiVersion 1 --username tacaizapanta
+Enter password: ************
+Current Mongosh Log ID: 684f9a2d888fd852ff50eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.ircnkvg.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.10 (API Version 1)
+Using Mongosh:          2.5.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-12zg5h-shard-0 [primary] test> db
+test
+Atlas atlas-12zg5h-shard-0 [primary] test> use Eduplan
+switched to db Eduplan
+Atlas atlas-12zg5h-shard-0 [primary] Eduplan> db
+Eduplan
+Atlas atlas-12zg5h-shard-0 [primary] Eduplan> db.persons.find()
+[
+  {
+    _id: ObjectId('684873e15ad1ebe5ced477e8'),
+    students: [
+      {
+        id: 1,
+        lastname: 'lascano',
+        firstname: 'edison',
+        age: 57,
+        salary: 4000
+      },
+      {
+        id: 2,
+        lastname: 'caizapanta',
+        firstname: 'tammy',
+        age: 20,
+        salary: 0
+      }
+    ]
+  }
+]
