@@ -1,0 +1,56 @@
+Microsoft Windows [Version 10.0.26100.4351]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\berna>mongosh "mongodb+srv://cluster0.dlcnbx5.mongodb.net/" --apiVersion 1 --username bsuarez
+Enter password: *******
+Current Mongosh Log ID: 68521fa0d9273d611550eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.dlcnbx5.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.10 (API Version 1)
+Using Mongosh:          2.5.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+Atlas atlas-gp3pny-shard-0 [primary] test> db
+test
+
+Atlas atlas-gp3pny-shard-0 [primary] students> exit
+
+C:\Users\berna>mongosh "mongodb+srv://cluster0.dlcnbx5.mongodb.net/" --apiVersion 1 --username bsuarez
+Enter password: *******
+Current Mongosh Log ID: 685221507bd1a445c750eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.dlcnbx5.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.10 (API Version 1)
+Using Mongosh:          2.5.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-gp3pny-shard-0 [primary] test> db
+test
+Atlas atlas-gp3pny-shard-0 [primary] test> use OOP
+switched to db OOP
+Atlas atlas-gp3pny-shard-0 [primary] OOP> db
+OOP
+Atlas atlas-gp3pny-shard-0 [primary] OOP> db.students.find()
+[
+  {
+    _id: ObjectId('684872e7362c1b9e17854dfd'),
+    id: 1,
+    lastName: 'Lascano',
+    firstName: 'Edison',
+    age: '54',
+    salary: '4078.86'
+  },
+  {
+    _id: ObjectId('684873b94cd9d83992c2b311'),
+    id: 2,
+    lastName: 'Suarez',
+    firstName: 'Bernardo',
+    age: '21',
+    salary: '100.00'
+  }
+]
+Atlas atlas-gp3pny-shard-0 [primary] OOP> exit
