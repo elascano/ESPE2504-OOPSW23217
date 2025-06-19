@@ -11,4 +11,16 @@
     "gender": "Male",
     "enrolled": true
   }
+  {
+    "id": "1",
+    "name": "Erick",
+    "age": 22,
+    "email": "derick1213@gmail.com",
+    "phone": "09594353743",
+    "major": "Bio",
+    "gpa": 12,
+    "address": "Loma",
+    "gender": "Male",
+    "enrolled": true
+  }
 ]

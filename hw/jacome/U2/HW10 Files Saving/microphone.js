@@ -6,7 +6,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const microphone = {};
 const fields = [
   'id',
   'brand',
@@ -21,6 +20,7 @@ const fields = [
 ];
 
 let index = 0;
+const microphone = {};
 
 function askData() {
   if (index < fields.length) {
@@ -30,13 +30,31 @@ function askData() {
       askData();
     });
   } else {
-    fs.writeFile('microphone.json', JSON.stringify(microphone, null, 2), (err) => {
-      if (err) {
-        console.error('Error saving file:', err);
-      } else {
-        console.log('microphone.json" saved successfully.');
+    
+    fs.readFile('microphone.json', 'utf8', (err, data) => {
+      let existingData = [];
+      
+      if (!err) {
+        
+        try {
+          existingData = JSON.parse(data);
+        } catch (parseError) {
+          console.log('Error parsing the existing data, starting fresh.');
+        }
       }
-      rl.close();
+
+      
+      existingData.push(microphone);
+
+      
+      fs.writeFile('microphone.json', JSON.stringify(existingData, null, 2), (err) => {
+        if (err) {
+          console.error('Error saving file:', err);
+        } else {
+          console.log('microphone.json saved successfully.');
+        }
+        rl.close();
+      });
     });
   }
 }

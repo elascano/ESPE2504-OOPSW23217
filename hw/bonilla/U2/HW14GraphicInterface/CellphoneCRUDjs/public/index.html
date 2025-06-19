@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRUD Cellphones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label,
+        input,
+        button {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .cellphone {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CRUD Cellphones</h1>
+
+    <h2>Create new cellphone</h2>
+    <label>ID: <input type="text" id="inputId" /></label>
+    <label>Width (cm): <input type="text" id="inputWidth" /></label>
+    <label>Height (cm): <input type="text" id="inputHeight" /></label>
+    <label>Type: <input type="text" id="inputType" /></label>
+    <button onclick="createCellphone()">Crear</button>
+
+    <h2>List of Cellphones</h2>
+    <div id="cellphoneList"></div>
+
+    <script>
+        const apiBase = '/api/cellphones';
+
+        async function fetchCellphones() {
+            const res = await fetch(apiBase);
+            const cellphones = await res.json();
+            const container = document.getElementById('cellphoneList');
+            container.innerHTML = '';
+            cellphones.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'cellphone';
+                div.innerHTML = `
+          <strong>ID:</strong> ${c.id || c._id} <br/>
+          <strong>Width:</strong> ${c.width} cm<br/>
+          <strong>Height:</strong> ${c.height} cm<br/>
+          <strong>Type:</strong> ${c.type}<br/>
+          <button onclick="deleteCellphone('${c._id}')">Eliminar</button>
+          <button onclick="editCellphonePrompt('${c._id}', ${c.width}, ${c.height}, '${c.type}', ${c.id || 'null'})">Editar</button>
+        `;
+                container.appendChild(div);
+            });
+        }
+
+        async function createCellphone() {
+            const id = parseInt(document.getElementById('inputId').value);
+            const width = parseInt(document.getElementById('inputWidth').value);
+            const height = parseInt(document.getElementById('inputHeight').value);
+            const type = document.getElementById('inputType').value;
+
+            if (!id || !width || !height || !type) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            const cellphone = { id, width, height, type };
+
+            await fetch(apiBase, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cellphone)
+            });
+
+            fetchCellphones();
+        }
+
+        async function deleteCellphone(id) {
+            if (confirm('¿Seguro que quieres eliminar este celular?')) {
+                await fetch(`${apiBase}/${id}`, { method: 'DELETE' });
+                fetchCellphones();
+            }
+        }
+
+        function editCellphonePrompt(_id, width, height, type, id) {
+            const newWidth = prompt('Nuevo width (cm):', width);
+            const newHeight = prompt('Nuevo height (cm):', height);
+            const newType = prompt('Nuevo tipo:', type);
+            if (newWidth && newHeight && newType) {
+                editCellphone(_id, id, parseInt(newWidth), parseInt(newHeight), newType);
+            }
+        }
+
+        async function editCellphone(_id, id, width, height, type) {
+            const cellphone = { id, width, height, type };
+            await fetch(`${apiBase}/${_id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cellphone)
+            });
+            fetchCellphones();
+        }
+
+        fetchCellphones();
+    </script>
+</body>
+
+</html>

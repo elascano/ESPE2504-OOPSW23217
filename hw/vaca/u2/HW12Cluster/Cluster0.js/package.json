@@ -1,0 +1,21 @@
+{
+  "name": "cluster0",
+  "version": "1.0.0",
+  "description": "Connect Mongo DB with Express for js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ESPEOOP"
+  },
+  "author": "Kevin Vaca",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0"
+  }
+}

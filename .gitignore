@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled class file
 *.class
 
@@ -22,3 +23,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
+=======
+/hw/caizapanta/u2/HW13ObjectCRUD/CableCRUD/target/
+/ws/vaca/u2/WS22InheritanceAndAbstraction/Farm/target/
+>>>>>>> acd38e600825e3ceb3f0abfe4808bea272354bc6

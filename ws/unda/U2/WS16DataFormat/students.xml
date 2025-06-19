@@ -1,0 +1,16 @@
+{<students>
+    <student>
+        <id>1</id>
+        <lastname>lascano</lastname>
+        <firstname>edison</firstname>
+        <age>56</age>
+        <salary>4070</salary>
+        </student>
+    <student>
+        <id>2</id>
+        <lastname>palacios</lastname>
+        <firstname>daniel</firstname>
+        <age>26</age>
+        <salary>1700</salary>
+        </student>
+</students>}
