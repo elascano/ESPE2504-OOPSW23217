@@ -9,12 +9,12 @@ import java.util.Date;
 public class Chicken extends FarmAnimal{
 
     private boolean isMolting;
-    private int egg;
+    
 
-    public Chicken(int id, String breed, Date bornOn, boolean isMolting, int egg) {
+    public Chicken(int id, String breed, Date bornOn, boolean isMolting) {
         super(id, breed, bornOn);
         this.isMolting=isMolting;
-        this.egg=egg;
+       
     }
   
     @Override
