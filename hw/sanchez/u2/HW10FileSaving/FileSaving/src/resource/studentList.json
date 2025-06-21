@@ -1,0 +1,13 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Juan",
+      "lastName": "Rodriguez",
+      "major": "Software",
+      "email": "juanrodriguez@outlook.com",
+      "typeStudent": "z",
+      "phoneNumber": "0999012354"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/david/.m2/repository/org/mongodb/mongodb-driver-sync/5.5.1/mongodb-driver-sync-5.5.1.jar;C:/Users/david/.m2/repository/org/mongodb/bson/5.5.1/bson-5.5.1.jar;C:/Users/david/.m2/repository/org/mongodb/mongodb-driver-core/5.5.1/mongodb-driver-core-5.5.1.jar;C:/Users/david/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar;C:/Users/david/.m2/repository/org/slf4j/slf4j-simple/2.0.7/slf4j-simple-2.0.7.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+24
+-sourcepath
+'C:/Users/david/Documents/GitHub - University/ESPE2504-OOPSW23217/hw/bonilla/U2/HW13ObjectCRUD/CellphoneCRUD/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/david/Documents/GitHub - University/ESPE2504-OOPSW23217/hw/bonilla/U2/HW13ObjectCRUD/CellphoneCRUD/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'CellphoneCRUD 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'CellphoneCRUD 1.0-SNAPSHOT API'
+ec.edu.espe.cellphonecrud.controller
+ec.edu.espe.cellphonecrud.model
+ec.edu.espe.cellphonecrud.view
+C:\Users\david\.m2\repository\org\mongodb\mongodb-driver-sync\5.5.1\mongodb-driver-sync-5.5.1.jar = 1750009480551
+C:\Users\david\.m2\repository\org\mongodb\bson\5.5.1\bson-5.5.1.jar = 1750009480665
+C:\Users\david\.m2\repository\org\mongodb\mongodb-driver-core\5.5.1\mongodb-driver-core-5.5.1.jar = 1750009480765
+C:\Users\david\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar = 1750011219590
+C:\Users\david\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar = 1750011219624
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\src\main\java = 1750009203422
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\allclasses-index.html = 1750023568335
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\allpackages-index.html = 1750023568339
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\element-list = 1750023567965
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\help-doc.html = 1750023568445
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\index-all.html = 1750023568420
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\index.html = 1750023568285
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\member-search-index.js = 1750023568357
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\module-search-index.js = 1750023568343
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\overview-summary.html = 1750023568433
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\overview-tree.html = 1750023568279
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\package-search-index.js = 1750023568351
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\search.html = 1750023568425
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\tag-search-index.js = 1750023568361
+C:\Users\david\Documents\GitHub - University\ESPE2504-OOPSW23217\hw\bonilla\U2\HW13ObjectCRUD\CellphoneCRUD\target\reports\apidocs\type-search-index.js = 1750023568354
