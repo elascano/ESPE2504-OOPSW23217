@@ -9,14 +9,14 @@ import java.util.Date;
 public class Pig extends FarmAnimal{
     private boolean hasTask;
 
-    public Pig(boolean hasTask, int id, String breed, Date bornOn) {
+    public Pig(int id, String breed, Date bornOn, boolean hasTask) {
         super(id, breed, bornOn);
         this.hasTask = hasTask;
     }
 
     @Override
     public String toString() {
-        return "Pig{" + "hasTask=" + hasTask + '}';
+        return "Pig{"+ super.toString() + "hasTask=" + hasTask + '}';
     }
 
     
