@@ -31,6 +31,7 @@ public class Farm {
         int idCow = 2;
         String breedCow = "criolla";
         Date bornOnDateCow = new Date();
+        int numberOfNipples = 4;
 
         //Píg Attributes
         float mudLevel = 14.5f;
@@ -54,9 +55,13 @@ public class Farm {
 
         //COW
         Food foodCow = new Food("boil");
-        farmAnimal = new Cow(isProducingMilk, milkProduction, idCow, breedCow, bornOnDateCow);
-        System.out.println("My cow is " + farmAnimal);
+        Cow cow = new Cow(isProducingMilk, milkProduction, numberOfNipples, idCow, breedCow, bornOnDateCow);
+
+        System.out.println("My cow is " + cow);
         farmAnimal.feed(foodCow);
+        System.out.println("Number of Nipples of this " + cow.getClass().getSimpleName() + " is -->");
+        System.out.println("breastfeeding a cow --> " + cow.breastfeed(4));
+        System.out.println("controling a cow --> " + cow.controlGestation(4));
 
         //PIG
         Food foodPig = new Food("vegetables");
