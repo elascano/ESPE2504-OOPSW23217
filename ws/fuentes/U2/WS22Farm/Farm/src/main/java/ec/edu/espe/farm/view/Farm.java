@@ -5,9 +5,11 @@
 package ec.edu.espe.farm.view;
 
 import ec.edu.espe.farm.model.Chicken;
+import ec.edu.espe.farm.model.Cow;
 import ec.edu.espe.farm.model.FarmAnimal;
 import ec.edu.espe.farm.model.Food;
 import ec.edu.espe.farm.model.Pig;
+import ec.edu.espe.farm.model.Sheep;
 import java.util.Date;
 
 /**
@@ -32,9 +34,16 @@ public class Farm {
         FarmAnimal farmAnimal;
         
         farmAnimal = new Chicken(id, breed, bornOnDate, isMolting);
-        farmAnimal = new Pig(hasTask, id, breed, bornOnDate);
-        farmAnimal = new Pig(hasTask, id, breed, bornOnDate);
+        System.out.println("My Animal is " + farmAnimal);
         
-        System.out.println("My chicken is " + farmAnimal);
+        farmAnimal = new Pig(id, breed, bornOnDate, hasTask);
+        System.out.println("My Animal is " + farmAnimal);
+        
+        farmAnimal = new Cow(isProducingMilk, milkLittersPerDay, id, breed, bornOnDate);
+        System.out.println("My Animal is " + farmAnimal);
+        
+        farmAnimal = new Sheep(lastSheering, woolWeightKg, id, breed, bornOnDate);
+        System.out.println("My Animal is " + farmAnimal);
+        
     }
 }
