@@ -80,7 +80,7 @@ public class Cow extends FarmAnimal implements IMammal {
 
     @Override
     public float controlGestation(int periodInDays) {
-        System.out.println("Crontoling a cow avery " + periodInDays + " days");
+        System.out.println("Crontoling a cow avery " + periodInDays + " days ");
         return periodInDays * 2;
     }
 
