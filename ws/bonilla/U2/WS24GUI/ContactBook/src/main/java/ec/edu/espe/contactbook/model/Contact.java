@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.contactbook.model;
 
 import java.util.ArrayList;
@@ -9,27 +5,32 @@ import java.util.Calendar;
 
 /**
  *
- * @author LABS-ESPE
+ * @author Bonilla David Softcrafters
  */
 public class Contact {
+
     private int id;
     private String firstName;
     private String lastName;
     private String cellphoneNumber;
     private String email;
-    private boolean frecuentFriend;
-    private String type; //family, friend, job, university
+    private boolean frequentFriend;
+    private String type; //familt, friend, job, university
     private Calendar bornOnType;
     private String comments;
     private ArrayList<Sport> sports;
 
-    public Contact(int id, String firstMame, String lastName, String cellphoneNumber, String email, boolean frecuentFriend, String type, Calendar bornOnType, String comments, ArrayList<Sport> sports) {
+    public void chat(Contact contact) {
+        System.out.println("chating ith contact -> " + contact.getFirstName());
+    }
+
+    public Contact(int id, String firstname, String lastName, String cellphoneNumber, String email, boolean frequentFriend, String type, Calendar bornOnType, String comments, ArrayList<Sport> sports) {
         this.id = id;
-        this.firstName = firstMame;
+        this.firstName = firstname;
         this.lastName = lastName;
         this.cellphoneNumber = cellphoneNumber;
         this.email = email;
-        this.frecuentFriend = frecuentFriend;
+        this.frequentFriend = frequentFriend;
         this.type = type;
         this.bornOnType = bornOnType;
         this.comments = comments;
@@ -38,9 +39,21 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Contact{" + "id=" + id + ",\n firstName=" + firstName + ",\n lastName=" + lastName + ",\n cellphoneNumber=" + cellphoneNumber + ",\n email=" + email + ",\n frecuentFriend=" + frecuentFriend + ",\n type=" + type + ",\n bornOnType=" + bornOnType + ",\n comments=" + comments + ",\n sports=" + sports + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Contact{");
+        sb.append("\n id=").append(getId());
+        sb.append("\n firstname=").append(getFirstName());
+        sb.append("\n lastName=").append(getLastName());
+        sb.append("\n cellphoneNumber=").append(getCellphoneNumber());
+        sb.append("\n email=").append(getEmail());
+        sb.append("\n frequentFriend=").append(isFrequentFriend());
+        sb.append("\n type=").append(getType());
+        sb.append("\n bornOnType=").append(getBornOnType());
+        sb.append("\n comments=").append(getComments());
+        sb.append("\n sports=").append(getSports());
+        sb.append('}');
+        return sb.toString();
     }
-
 
     /**
      * @return the id
@@ -54,20 +67,6 @@ public class Contact {
      */
     public void setId(int id) {
         this.id = id;
-    }
-
-    /**
-     * @return the firstMame
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * @param firstName the firstMame to set
-     */
-    public void setFirstMame(String firstName) {
-        this.firstName = firstName;
     }
 
     /**
@@ -113,17 +112,17 @@ public class Contact {
     }
 
     /**
-     * @return the frecuentFriend
+     * @return the frequentFriend
      */
-    public boolean isFrecuentFriend() {
-        return frecuentFriend;
+    public boolean isFrequentFriend() {
+        return frequentFriend;
     }
 
     /**
-     * @param frecuentFriend the frecuentFriend to set
+     * @param frequentFriend the frequentFriend to set
      */
-    public void setFrecuentFriend(boolean frecuentFriend) {
-        this.frecuentFriend = frecuentFriend;
+    public void setFrequentFriend(boolean frequentFriend) {
+        this.frequentFriend = frequentFriend;
     }
 
     /**
@@ -181,5 +180,18 @@ public class Contact {
     public void setSports(ArrayList<Sport> sports) {
         this.sports = sports;
     }
-    
+
+    /**
+     * @return the firstName
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * @param firstName the firstName to set
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }
