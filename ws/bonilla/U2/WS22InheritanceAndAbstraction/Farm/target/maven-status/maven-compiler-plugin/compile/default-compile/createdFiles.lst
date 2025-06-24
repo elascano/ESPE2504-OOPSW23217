@@ -4,4 +4,5 @@ ec\edu\espe\farm\view\Farm.class
 ec\edu\espe\farm\model\Sheep.class
 ec\edu\espe\farm\model\Food.class
 ec\edu\espe\farm\model\Pig.class
+ec\edu\espe\farm\controller\IMammal.class
 ec\edu\espe\farm\model\Cow.class

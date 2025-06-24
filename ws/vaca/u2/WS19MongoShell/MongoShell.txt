@@ -1,0 +1,42 @@
+use OOP
+switched to db OOP
+db
+OOP
+db.SoccerPlayers.find()
+{
+  _id: ObjectId('684f6e6bee5313ff4fc02121'),
+  id: 3,
+  name: 'Hernán Galíndez',
+  position: 'Goalkeeper',
+  club: 'Huracán',
+  nationality: 'Ecuador',
+  age: 36
+}
+{
+  _id: ObjectId('684f6e6bee5313ff4fc0211f'),
+  id: 1,
+  name: 'Gonzalo Plata',
+  position: 'Forward',
+  club: 'C. R. Flamengo',
+  nationality: 'Ecuador',
+  age: 23
+}
+{
+  _id: ObjectId('684f6e6bee5313ff4fc02122'),
+  id: 4,
+  name: 'Moises Caicedo',
+  position: 'Midfielder',
+  club: 'Chelsea F. C.',
+  nationality: 'Ecuador',
+  age: 22
+}
+{
+  _id: ObjectId('684f6e6bee5313ff4fc02120'),
+  id: 2,
+  name: 'Jeremy Sarmiento',
+  position: 'Midfielder',
+  club: 'Burnley F. C.',
+  nationality: 'Ecuador',
+  age: 21
+}
+Atlas atlas-8lcwnc-shard-0 [primary] OOP
