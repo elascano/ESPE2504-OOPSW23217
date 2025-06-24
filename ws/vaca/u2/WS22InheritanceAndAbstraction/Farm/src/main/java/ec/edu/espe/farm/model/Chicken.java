@@ -24,9 +24,4 @@ public class Chicken extends FarmAnimal{
     public void feed(Food food) {
         System.out.println("Feeding chickens with: " + food);
     }
-
- 
-    
-
-
 }
