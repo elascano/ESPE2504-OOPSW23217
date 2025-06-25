@@ -6,8 +6,11 @@ package ec.edu.espe.contactbook.view;
 
 import ec.edu.espe.contactbook.model.Contact;
 import ec.edu.espe.contactbook.model.Sport;
+import java.awt.Color;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +18,7 @@ import java.util.Calendar;
  */
 public class FrmContact extends javax.swing.JFrame {
 
+    int id=0;
     /**
      * Creates new form FrmContact
      */
@@ -101,7 +105,19 @@ public class FrmContact extends javax.swing.JFrame {
 
         jLabel11.setText("Sports:");
 
+        txtid.setToolTipText("Only digitis are entered here, for example 0111");
+        txtid.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtidFocusLost(evt);
+            }
+        });
+
+        txtFirstName.setToolTipText("");
+
         cmbFrequentFriend.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cmbFrequentFriend.setToolTipText("Ye if your friends send this message");
+
+        txtEmail.setToolTipText("emails format: new@company");
 
         cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Friend", "Family", "Job", "University" }));
 
@@ -140,12 +156,11 @@ public class FrmContact extends javax.swing.JFrame {
                     .addGroup(PnlContactsInputLayout.createSequentialGroup()
                         .addGroup(PnlContactsInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addGroup(PnlContactsInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cmbFrequentFriend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                .addComponent(txtFirstName)
-                                .addComponent(txtLastName)
-                                .addComponent(txtCellphoneNumber)))
+                            .addComponent(cmbFrequentFriend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(txtFirstName)
+                            .addComponent(txtLastName)
+                            .addComponent(txtCellphoneNumber))
                         .addGap(98, 98, 98)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -245,19 +260,21 @@ public class FrmContact extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        int id;
+
         String firstName;
         String lastName;
         String celphoneNumber;
         String email;
         boolean frequentFriend;
-        String type; //faqmily, friend, job, university
+        String type; //family, friend, job, university
         Calendar bornOnType;
         String comments;
         ArrayList<Sport> sports = new ArrayList<>();
         Contact contact;
-
-        id = Integer.parseInt(txtid.getText());
+        
+        validateNumbersInId();
+        
+        //id = Integer.parseInt(txtid.getText());
         firstName = txtFirstName.getText();
         lastName = txtLastName.getText();
         celphoneNumber = txtCellphoneNumber.getText();
@@ -268,8 +285,29 @@ public class FrmContact extends javax.swing.JFrame {
         comments = txaComments.getText();
                 
         contact = new Contact(id,firstName,lastName,celphoneNumber,email,frequentFriend,type,bornOnType,comments,sports);
-        System.out.println("Contact -->" + contact);
+        
+        
+        JOptionPane.showMessageDialog(rootPane, "New Contact" + contact);
+        
+        //JOptionPane.showMessageDialog(rootPane, lstSports.getSelectedValues());
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtidFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtidFocusLost
+        validateNumbersInId();
+    }//GEN-LAST:event_txtidFocusLost
+
+    public void validateNumbersInId() throws HeadlessException {
+        // TODO add your handling code here:
+        
+        try{
+            id = Integer.parseInt(txtid.getText());
+            txtid.setForeground(Color.black);
+        }catch (NumberFormatException ex){
+            txtid.setForeground(Color.red);
+            JOptionPane.showMessageDialog(rootPane, "please enter digit in the contact id", "Error on Id", JOptionPane.ERROR_MESSAGE);
+            txtid.requestFocusInWindow();
+        }
+    }
 
     /**
      * @param args the command line arguments
