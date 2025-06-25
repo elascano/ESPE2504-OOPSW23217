@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 /**
  *
- * @author LABS-ESPE
+ * @author Sanchez Julio 
  */
 public class Contact {
     

@@ -3,9 +3,11 @@ package ec.edu.espe.contactbook.view;
 
 import ec.edu.espe.contactbook.model.Contact;
 import ec.edu.espe.contactbook.model.Sport;
+import java.awt.Color;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.TimeZone;
+import javax.swing.JOptionPane;
 
 public class FrmContact extends javax.swing.JFrame {
 
@@ -57,17 +59,17 @@ public class FrmContact extends javax.swing.JFrame {
         PmlContactTitle.setLayout(PmlContactTitleLayout);
         PmlContactTitleLayout.setHorizontalGroup(
             PmlContactTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmlContactTitleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PmlContactTitleLayout.createSequentialGroup()
+                .addGap(308, 308, 308)
                 .addComponent(jLabel13)
-                .addGap(300, 300, 300))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PmlContactTitleLayout.setVerticalGroup(
             PmlContactTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PmlContactTitleLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Id:");
@@ -90,13 +92,33 @@ public class FrmContact extends javax.swing.JFrame {
 
         jLabel12.setText("Sports:");
 
+        txtId.setToolTipText("Only digits are entered ");
+        txtId.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIdFocusLost(evt);
+            }
+        });
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
             }
         });
 
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLastNameActionPerformed(evt);
+            }
+        });
+
+        txtEmail.setToolTipText("emails format: name@nameOfCompany.com");
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+
         cmbFrecuentFriend.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cmbFrecuentFriend.setToolTipText("Yes, if your friend send the messages");
         cmbFrecuentFriend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbFrecuentFriendActionPerformed(evt);
@@ -123,41 +145,40 @@ public class FrmContact extends javax.swing.JFrame {
             .addGroup(PmlContactInputLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PmlContactInputLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(208, 208, 208))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PmlContactInputLayout.createSequentialGroup()
-                        .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PmlContactInputLayout.createSequentialGroup()
-                                .addComponent(cmbFrecuentFriend, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(346, 346, 346))
-                            .addGroup(PmlContactInputLayout.createSequentialGroup()
-                                .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCellphoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                            .addComponent(cmbFrecuentFriend, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(PmlContactInputLayout.createSequentialGroup()
+                        .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCellphoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmlContactInputLayout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(131, 131, 131))
                             .addGroup(PmlContactInputLayout.createSequentialGroup()
-                                .addGroup(PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addGap(218, 218, 218)
+                                .addComponent(jLabel12)
+                                .addGap(208, 208, 208))))))
         );
         PmlContactInputLayout.setVerticalGroup(
             PmlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,10 +237,10 @@ public class FrmContact extends javax.swing.JFrame {
         PmlContactActions.setLayout(PmlContactActionsLayout);
         PmlContactActionsLayout.setHorizontalGroup(
             PmlContactActionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PmlContactActionsLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmlContactActionsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btmSave)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
         PmlContactActionsLayout.setVerticalGroup(
             PmlContactActionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +286,7 @@ public class FrmContact extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btmSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmSaveActionPerformed
-        int id;
+        int id = 0;
         String firstName;
         String lastName;
         String cellphoneNumber;
@@ -287,9 +308,39 @@ public class FrmContact extends javax.swing.JFrame {
         comments = txaComents.getText();
         
         Contact contact;
+        
+        contact = new Contact(id, firstName, lastName, cellphoneNumber, email, frequentFriend, type, bornOnType, comments, sports);
+        
+        JOptionPane.showMessageDialog(rootPane, "New Contact" + contact);
+        
+        JOptionPane.showMessageDialog(rootPane, LstSports);
+        
         contact = new Contact(id, firstName, lastName, cellphoneNumber, email, frequentFriend, type, bornOnType, comments, sports);
         System.out.println("contact ->" +contact.toString());
     }//GEN-LAST:event_btmSaveActionPerformed
+
+    private void txtIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIdFocusLost
+        validateNumbersInId();
+    }//GEN-LAST:event_txtIdFocusLost
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLastNameActionPerformed
+
+    public void validateNumbersInId() throws HeadlessException {
+        try{
+            int id = Integer.parseInt(txtId.getText());
+            txtId.setForeground(Color.black);
+        } catch (NumberFormatException ex){
+            txtId.setForeground(Color.red);
+            JOptionPane.showMessageDialog(rootPane, "Error in Id, please enter digits in the contact id", "Error on Id", JOptionPane.ERROR_MESSAGE);
+            txtId.requestFocusInWindow();
+        }
+    }
 
     /**
      * @param args the command line arguments
