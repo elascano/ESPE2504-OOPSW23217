@@ -92,7 +92,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -104,17 +104,20 @@
                       <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="txtFirstName" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="txtFirstName" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtId" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtId" max="32767" attributes="0"/>
+                                  <EmptySpace min="346" pref="346" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="cmbType" min="-2" max="-2" attributes="0"/>
                               <Component id="txtBithDate" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -129,7 +132,7 @@
                               </Group>
                               <Component id="txtComments" min="-2" pref="388" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="83" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -247,10 +250,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtId">
           <Properties>
-            <Property name="text" type="java.lang.String" value="                   "/>
+            <Property name="toolTipText" type="java.lang.String" value="Example: 0001"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFirstName">
@@ -274,6 +278,7 @@
                 <StringItem index="1" value="No"/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Yes, if your friend send a request"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -282,11 +287,13 @@
         <Component class="javax.swing.JTextField" name="txtCellphone">
           <Properties>
             <Property name="text" type="java.lang.String" value="                      "/>
+            <Property name="toolTipText" type="java.lang.String" value="Use Ten numbers"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
           <Properties>
             <Property name="text" type="java.lang.String" value="                             "/>
+            <Property name="toolTipText" type="java.lang.String" value="emails format name@company.domain"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbType">
@@ -310,6 +317,7 @@
         <Component class="javax.swing.JTextField" name="txtBithDate">
           <Properties>
             <Property name="text" type="java.lang.String" value="                           "/>
+            <Property name="toolTipText" type="java.lang.String" value="Example: 2000-01-31"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtComments">

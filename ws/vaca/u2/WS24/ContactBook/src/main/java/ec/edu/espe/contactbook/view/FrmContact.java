@@ -6,8 +6,11 @@ package ec.edu.espe.contactbook.view;
 
 import ec.edu.espe.contactbook.model.Contact;
 import ec.edu.espe.contactbook.model.Sport;
+import java.awt.Color;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,10 +104,15 @@ public class FrmContact extends javax.swing.JFrame {
 
         jLabel11.setText("Sports:");
 
-        txtId.setText("                   ");
+        txtId.setToolTipText("Example: 0001");
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
+            }
+        });
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
             }
         });
 
@@ -118,10 +126,13 @@ public class FrmContact extends javax.swing.JFrame {
         txtLastName.setText("                          ");
 
         cmbFrequentFriend.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cmbFrequentFriend.setToolTipText("Yes, if your friend send a request");
 
         txtCellphone.setText("                      ");
+        txtCellphone.setToolTipText("Use Ten numbers");
 
         txtEmail.setText("                             ");
+        txtEmail.setToolTipText("emails format name@company.domain");
 
         cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Family", "Friend", "Job", "University" }));
         cmbType.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +142,7 @@ public class FrmContact extends javax.swing.JFrame {
         });
 
         txtBithDate.setText("                           ");
+        txtBithDate.setToolTipText("Example: 2000-01-31");
 
         txtComments.setText(" ");
 
@@ -160,13 +172,15 @@ public class FrmContact extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(PnlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlContactInputLayout.createSequentialGroup()
-                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                        .addGap(141, 141, 141)
                         .addComponent(jLabel11)
                         .addGap(166, 166, 166))
                     .addGroup(PnlContactInputLayout.createSequentialGroup()
                         .addGroup(PnlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PnlContactInputLayout.createSequentialGroup()
+                                .addComponent(txtId)
+                                .addGap(346, 346, 346))
                             .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtBithDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PnlContactInputLayout.createSequentialGroup()
@@ -178,7 +192,7 @@ public class FrmContact extends javax.swing.JFrame {
                                 .addGap(245, 245, 245)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtComments, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         PnlContactInputLayout.setVerticalGroup(
             PnlContactInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,6 +314,16 @@ public class FrmContact extends javax.swing.JFrame {
     Calendar bornOnType;
     String comments;
     ArrayList<Sport> sports = new ArrayList<>();
+    Contact contact;
+    
+    try {
+        id = Integer.parseInt(txtId.getText());
+        txtId.setForeground(Color.black);
+
+    } catch (NumberFormatException ex) {
+        txtId.setForeground(Color.red);
+        JOptionPane.showMessageDialog(rootPane, "erros, please enter a num", "Error on ID", JOptionPane.ERROR_MESSAGE);
+        txtId.requestFocusInWindow();    }
     
     id = Integer.parseInt(txtId.getText());
     firstName = txtFirstName.getText();
@@ -311,9 +335,16 @@ public class FrmContact extends javax.swing.JFrame {
     bornOnType = Calendar.getInstance();
     comments = txtComments.getText();
     
-    Contact contact = new Contact(id, firstName, lastName, cellphoneNumber, email, frequentFriend, type, bornOnType, comments);
-        System.out.println ("contact -> " + contact);      
+    contact = new Contact (id, firstName, lastName, cellphoneNumber, email, frequentFriend, type, bornOnType,comments );
+        System.out.println("Contact ->" + contact);
+        JOptionPane.showMessageDialog(rootPane, "New Contact" + contact);
+        
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdKeyTyped
+
 
     /**
      * @param args the command line arguments

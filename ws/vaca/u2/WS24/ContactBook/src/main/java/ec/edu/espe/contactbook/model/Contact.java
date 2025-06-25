@@ -9,7 +9,8 @@ import java.util.Calendar;
  */
 public class Contact {
 
-    public Contact(int id1, String firstName1, String lastName1, String cellphoneNumber1, String email1, boolean frequentFriend1, String type1, Calendar bornOnType1, String comments1) {
+    public Contact(int id, String firstName1, String lastName1, String cellphoneNumber1, String email1, boolean frequentFriend, String type, Calendar bornOnType, String comments) {
+    
     }
     private int id;
     private String firstName;
@@ -21,7 +22,22 @@ public class Contact {
     private Calendar bornOnType;
     private String comments;
     private ArrayList<Sport> sports;
+
+    public Contact(int id, String firstName, String lastName, String cellphoneNumber, String email, boolean frequentFriend, String type, Calendar bornOnType, String comments, ArrayList<Sport> sports) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cellphoneNumber = cellphoneNumber;
+        this.email = email;
+        this.frequentFriend = frequentFriend;
+        this.type = type;
+        this.bornOnType = bornOnType;
+        this.comments = comments;
+        this.sports = sports;
+    }
+
     
+   
     public void chat (Contact contact) {
         System.out.println(" chating with contact ->" + contact.getFirstName());
     }
@@ -45,6 +61,8 @@ public class Contact {
         sb.append('}');
         return sb.toString();
     }
+   
+    
 
     /**
      * @return the id
