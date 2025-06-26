@@ -16,12 +16,12 @@ import javax.swing.plaf.OptionPaneUI;
  *
  * @author LABS-ESPE
  */
-public class FrmContact extends javax.swing.JFrame {
+public class FrmContactMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmContact
      */
-    public FrmContact() {
+    public FrmContactMenu() {
         initComponents();
     }
 
@@ -333,9 +333,9 @@ public class FrmContact extends javax.swing.JFrame {
          txtid.setForeground(Color.red);
          JOptionPane.showMessageDialog(rootPane, "Please enter digits in the contact id--->" + txtid.getText(), "error on id",JOptionPane.ERROR_MESSAGE);
          JOptionPane.showMessageDialog(rootPane, "error, please enter the number");
-         txtid.requestFocusInWindow();
-         
+         txtid.requestFocusInWindow();    
      }
+  
     firstName = txtfirstName.getText();
     lastName = txtlastName.getText();
     cellphoneNumer = txtcellphonerNumer.getText();
@@ -376,20 +376,21 @@ public class FrmContact extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContactMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContactMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContactMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContactMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmContact().setVisible(true);
+                new FrmContactMenu().setVisible(true);
             }
         });
     }
