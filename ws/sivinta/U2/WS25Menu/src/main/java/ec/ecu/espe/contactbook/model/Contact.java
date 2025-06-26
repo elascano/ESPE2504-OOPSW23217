@@ -1,0 +1,186 @@
+package ec.ecu.espe.contactbook.model;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
+/**
+ *
+ * @author LABS-ESPE
+ */
+public class Contact {
+
+    public Contact(int id1, String firstName1, String lastName1, String cellphoneNumber1, String email1, boolean frequentFriend, String type1, Calendar bornOnType1, String comments1) {
+    }
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String cellphoneNumber;
+    private String email;
+    private boolean frenquentFriend;
+    private String type; //Family, frien, job, university
+    private Calendar bornOnType;
+    private String comments;
+    private ArrayList<Sport> sports;
+
+    public void chat(Contact contact) {
+        System.out.println(" chating with contact -> " + contact.getFirstName());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nContact{");
+        sb.append("\nid=").append(id);
+        sb.append(",\n firstName=").append(firstName);
+        sb.append(",\n lastName=").append(lastName);
+        sb.append(",\n cellphoneNumber=").append(cellphoneNumber);
+        sb.append(",\n email=").append(email);
+        sb.append(",\n frenquentFriend=").append(frenquentFriend);
+        sb.append(",\n type=").append(type);
+        sb.append(",\n bornOnType=").append(bornOnType);
+        sb.append(",\n comments=").append(comments);
+        sb.append(",\n sports=").append(sports);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the firstName
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * @param firstName the firstName to set
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    /**
+     * @return the lastName
+     */
+    public String getLastName() {
+        return lastName;
+    }
+
+    /**
+     * @param lastName the lastName to set
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    /**
+     * @return the cellphoneNumber
+     */
+    public String getCellphoneNumber() {
+        return cellphoneNumber;
+    }
+
+    /**
+     * @param cellphoneNumber the cellphoneNumber to set
+     */
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the frenquentFriend
+     */
+    public boolean isFrenquentFriend() {
+        return frenquentFriend;
+    }
+
+    /**
+     * @param frenquentFriend the frenquentFriend to set
+     */
+    public void setFrenquentFriend(boolean frenquentFriend) {
+        this.frenquentFriend = frenquentFriend;
+    }
+
+    /**
+     * @return the typer
+     */
+    public String getTyper() {
+        return type;
+    }
+
+    /**
+     * @param typer the typer to set
+     */
+    public void setTyper(String typer) {
+        this.type = type;
+    }
+
+    /**
+     * @return the bornOnType
+     */
+    public Calendar getBornOnType() {
+        return bornOnType;
+    }
+
+    /**
+     * @param bornOnType the bornOnType to set
+     */
+    public void setBornOnType(Calendar bornOnType) {
+        this.bornOnType = bornOnType;
+    }
+
+    /**
+     * @return the comments
+     */
+    public String getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments the comments to set
+     */
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    /**
+     * @return the sports
+     */
+    public ArrayList<Sport> getSports() {
+        return sports;
+    }
+
+    /**
+     * @param sports the sports to set
+     */
+    public void setSports(ArrayList<Sport> sports) {
+        this.sports = sports;
+    }
+}
