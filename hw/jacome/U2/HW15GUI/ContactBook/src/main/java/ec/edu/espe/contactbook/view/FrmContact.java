@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmContact extends javax.swing.JFrame {
 
-    int id = 0;
-    String firstName;
-    String lastName;
-
+    int id=0;
     /**
      * Creates new form FrmContact
      */
@@ -264,7 +261,8 @@ public class FrmContact extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
-        
+        String firstName;
+        String lastName;
         String celphoneNumber;
         String email;
         boolean frequentFriend;
@@ -273,60 +271,31 @@ public class FrmContact extends javax.swing.JFrame {
         String comments;
         ArrayList<Sport> sports = new ArrayList<>();
         Contact contact;
-
+        
         validateNumbersInId();
-
-        validateFirstName();
-    
-        validateLastName();
-
-    //id = Integer.parseInt(txtid.getText());
-    //firstName  = txtFirstName.getText();
-    lastName  = txtLastName.getText();
-    celphoneNumber  = txtCellphoneNumber.getText();
-    email  = txtEmail.getText();
-    frequentFriend  = cmbFrequentFriend.getSelectedItem() == "Yes";
-    type  = cmbType.getSelectedItem().toString();
-    bornOnType  = Calendar.getInstance();
-    comments  = txaComments.getText();
-
-    contact  = new Contact(id, firstName, lastName, celphoneNumber, email, frequentFriend, type, bornOnType, comments, sports);
-
-    JOptionPane.showMessageDialog (rootPane, "New Contact" + contact);
+        
+        //id = Integer.parseInt(txtid.getText());
+        firstName = txtFirstName.getText();
+        lastName = txtLastName.getText();
+        celphoneNumber = txtCellphoneNumber.getText();
+        email = txtEmail.getText();
+        frequentFriend = cmbFrequentFriend.getSelectedItem() == "Yes";
+        type = cmbType.getSelectedItem().toString();
+        bornOnType = Calendar.getInstance();
+        comments = txaComments.getText();
+                
+        contact = new Contact(id,firstName,lastName,celphoneNumber,email,frequentFriend,type,bornOnType,comments,sports);
+        
+        
+        JOptionPane.showMessageDialog(rootPane, "New Contact" + contact);
         
         //JOptionPane.showMessageDialog(rootPane, lstSports.getSelectedValues());
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    public void validateLastName() throws HeadlessException {
-        String lastName = txtLastName.getText();
-        if (lastName.matches("^[\\p{L} \\'-]+$")) {
-            txtLastName.setForeground(Color.black);
-        } else {
-            txtLastName.setForeground(Color.red);
-            JOptionPane.showMessageDialog(rootPane,"Please enter only valid letters, spaces, and characters (ñ, accents) in the name.","Lastame Error.",JOptionPane.ERROR_MESSAGE);
-            txtLastName.requestFocusInWindow();
-        }
-    }
-
-    public void validateFirstName() throws HeadlessException {
-        String firstName = txtFirstName.getText();
-        
-        if (firstName.matches("^[\\p{L} \\'-]+$")) {
-            txtFirstName.setForeground(Color.black);
-        } else {
-            txtFirstName.setForeground(Color.red);
-            JOptionPane.showMessageDialog(rootPane,"Please enter only valid letters, spaces, and characters (ñ, accents) in the name.","Name Error.",JOptionPane.ERROR_MESSAGE);
-            txtFirstName.requestFocusInWindow();
-        }
-    }
-
     private void txtidFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtidFocusLost
         validateNumbersInId();
-        validateFirstName();
-        validateLastName();
     }//GEN-LAST:event_txtidFocusLost
 
-    
     public void validateNumbersInId() throws HeadlessException {
         // TODO add your handling code here:
         
@@ -354,31 +323,16 @@ public class FrmContact extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                
-
-
-
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
