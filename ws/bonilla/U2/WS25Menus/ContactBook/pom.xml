@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>18</maven.compiler.release>
-        <exec.mainClass>ec.edu.espe.contactbook.view.FrmContact</exec.mainClass>
+        <exec.mainClass>ec.edu.espe.contactbook.view.SplasshWindow</exec.mainClass>
     </properties>
 </project>
