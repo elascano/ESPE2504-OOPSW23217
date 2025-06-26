@@ -1,6 +1,74 @@
-{"students":
-    [
-        {"id":1,"lastanme":"lascano","firstname":"edison","age":54,"salary":407.86},
-        {"id":2,"lastanme":"jacome","firstname":"micaela","age":19,"salary":0.0}
-    ]
+{
+  "students": [
+    {
+      "id": 1,
+      "lastanme": "lascano",
+      "firstname": "edison",
+      "age": 54,
+      "salary": 407.86
+    },
+    {
+      "id": 2,
+      "lastanme": "jacome",
+      "firstname": "micaela",
+      "age": 19,
+      "salary": 0
+    },
+    {
+      "id": 3,
+      "lastanme": "Olivares",
+      "firstname": "Antonio",
+      "age": 34,
+      "salary": 1200
+    },
+    {
+      "id": 4,
+      "lastanme": "Romero",
+      "firstname": "Gisella",
+      "age": 20,
+      "salary": 250
+    },
+    {
+      "id": 5,
+      "lastanme": "Garces",
+      "firstname": "Joshua",
+      "age": 23,
+      "salary": 600
+    },
+    {
+      "id": 6,
+      "lastanme": "Ortiz",
+      "firstname": "Luis",
+      "age": 24,
+      "salary": 600
+    },
+    {
+      "id": 7,
+      "lastanme": "Torres",
+      "firstname": "Liliana",
+      "age": 24,
+      "salary": 750
+    },
+    {
+      "id": 8,
+      "lastanme": "Acosta",
+      "firstname": "Carlos",
+      "age": 42,
+      "salary": 1900
+    },
+    {
+      "id": 9,
+      "lastanme": "Suares",
+      "firstname": "Cristian",
+      "age": 48,
+      "salary": 1500
+    },
+    {
+      "id": 10,
+      "lastanme": "Lojano",
+      "firstname": "Jose",
+      "age": 59,
+      "salary": 2500
+    }
+  ]
 }

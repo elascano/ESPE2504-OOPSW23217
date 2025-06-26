@@ -1,0 +1,12 @@
+{
+  "numberOfWheels": 10,
+  "color": "black",
+  "brand": "Mercedes-Benz",
+  "year": 2015,
+  "hasTrailer": false,
+  "plate": "ABC1234",
+  "registration": "XYZ6789",
+  "fuelCapacity": 250,
+  "engineType": "diesel",
+  "mileage": 100000
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled class file
 *.class
 
@@ -21,68 +22,22 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
+=======
+/hw/caizapanta/u2/HW13ObjectCRUD/CableCRUD/target/
+/ws/vaca/u2/WS22InheritanceAndAbstraction/Farm/target/
+>>>>>>> acd38e600825e3ceb3f0abfe4808bea272354bc6
+/ws/vaca/u2/WS23tutoria/Farm/target/
 <<<<<<< HEAD
 <<<<<<< HEAD
-replay_pid*
-<<<<<<< HEAD
-/ws/andrade/u1/WS05ClassNetBeans/JavaApplication1/nbproject/private/
-/ws/andrade/u1/WS05ClassNetBeans/Chikenfarmsimulator/nbproject/private/
-/ws/andrade/u1/WS05FromDiagramToCode/Chikenfarmsimulator/nbproject/private/
-/ws/andrade/u1/WS05FromDiagramToCode/JavaApplication1/nbproject/private/
-/ws/andrade/u1/WS05FromDiagramToCode/Chikenfarmsimulator/build/
+/ws/astudillo/U2/WS24UI/ContactBook/target/
 =======
-<<<<<<< HEAD
-/ws/chicaiza/u1/WS05FromDiagramToCode/ChickenFarmSimulator/nbproject/private/
-/ws/chicaiza/u1/WS05FromDiagramToCode/ChickenFarmSimulator/build/
+/ws/bonilla/U2/WS24GUI/ContactBook/target/
+>>>>>>> 0efa52dbc9f36ff1a16085aec2ea3c546a631bdc
 =======
-<<<<<<< HEAD
-/ws/vaca/u1/WS05FromDiagramToCode/ChickenFarmSimulator/nbproject/private/
-/ws/vaca/u1/WS05FromDiagramToCode/ChickenFarmSimulator/build/
+/ws/andrade/u2/Workshop 24/ContactBook/target/
 =======
-/ws/bonilla/U1/WS05FromDiagramToCode/ChickenFarmSimulator/nbproject/private/
-/ws/bonilla/U1/WS05FromDiagramToCode/ChickenFarmSimulator/build/
-/ws/bonilla/U1/WS05FromDiagramToCode/ChickenFarmSimulator/dist/
->>>>>>> e1d19ef675df6982dc61f56ba56262afb2fcbc03
->>>>>>> 2af678394febc7cb50b77bafe770c7a23720007d
->>>>>>> 956b0c4eef57e767ae5ba82924a62ba9a04eb796
-<<<<<<< HEAD
-/ws/chicaiza/u1/WS05FromDiagramToCode/HelloWord/nbproject/private/
-/ws/chicaiza/u1/WS05FromDiagramToCode/HelloWord/build/
-=======
-/hw/bonilla/U1/HW08HelloWord/HelloWord/nbproject/private/
-/hw/bonilla/U1/HW08HelloWord/HelloWord/build/
->>>>>>> edd9a3c6eeab90c8e2f3883471e99593116a4ebf
-<<<<<<< HEAD
->>>>>>> 218a981ce05768bf18b28ede6265f78a55569907
-/ws/vaca/u1/WS05FromDiagramToCode/HelloWorld.java/nbproject/private/
-/ws/vaca/U1/WS05FromDiagramToCode/HelloWorld.java/nbproject/private/
-=======
-/ws/chicaiza/u1/WS05FromDiagramToCode/CraftMarket/nbproject/private/
-/ws/chicaiza/u1/WS05FromDiagramToCode/CraftMarket/build/
-=======
-replay_pid*
->>>>>>> 0dd8f55d19e872dbd442cdeec625a4cfbf99ab05
->>>>>>> afc8d35bb9537bf9b8d61f0effe10aa96bfe0aa7
-<<<<<<< HEAD
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator/nbproject/private/
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator/build/
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator/dist/
-=======
->>>>>>> 36bd0c2d11e13fba916711e8e57feca6a0eb3f85
->>>>>>> 5b43259d1ad3611e21e0f59660073bd8d458872a
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator.java/build/
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator.java/dist/
-/ws/vaca/U1/WS10Constructors/ChickenFarmSimulator.java/nbproject/private/
-/hw/vaca/U1/HW08HelloWord/HelloWorld.java/build/
-=======
-
->>>>>>> d0ca561922a6b4b963629a673182e3e0fb9adfca
-/ws/vaca/u2/WS16DataFormat/New Folder/TaxesLib/nbproject/private/
-/ws/vaca/u2/WS16DataFormat/New Folder/TaxesLib/build/
-/ws/vaca/u2/WS16DataFormat/New Folder/TaxesLib/dist/
-/ws/vaca/u2/WS17Libraries/TaxesLib/build/
-/ws/vaca/u2/WS17Libraries/TaxesLib/nbproject/private/
-/ws/vaca/u2/WS17Libraries/EBusinessCompany/nbproject/private/
-/ws/vaca/u2/WS17Libraries/EBusinessCompany/dist/
-/ws/vaca/u2/WS17Libraries/TaxesLib/dist/
-/ws/vaca/u2/WS17Libraries/EBusinessCompany/build/
+/ws/bonilla/U2/WS24GUI/ContactBook/target/
+/ws/sanchez/u2/WS24GUI/ContactBook/target/
+>>>>>>> 20e0273229e733cea1798f49803150b26b4291f9
+>>>>>>> 69244c3d4c7d5d0f605f01bb5545e1c4345ce372

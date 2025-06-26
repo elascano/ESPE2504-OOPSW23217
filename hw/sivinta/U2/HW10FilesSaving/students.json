@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Jahir",
+    "age": 21,
+    "email": "kjsivinta@espe.edu.ec",
+    "phone": "0995785567",
+    "major": "Software Engeneering",
+    "gpa": 19,
+    "address": "Sangolqui",
+    "gender": "Male",
+    "enrolled": true
+  }
+]

@@ -1,0 +1,10 @@
+Microsoft Windows [Versión 10.0.22621.4317]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Windows\System32>py --version
+Python 3.13.5
+
+C:\Windows\System32>node --version
+v22.16.0
+
+C:\Windows\System32>

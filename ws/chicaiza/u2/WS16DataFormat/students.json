@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "lastname": "lascano",
+      "firstname": "edison",
+      "age": 57,
+      "salary": 4000
+    },
+    {
+      "id": 2,
+      "lastname": "Chicaiza",
+      "firstname": "Michael",
+      "age": 20,
+      "salary": 0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+    {
+        "id":"1",
+        "brand":"Sony",
+        "model":"CDP-CE500",
+        "capacity":"5 CDs",
+        "type":"Compact Disc Player",
+        "price": 199.99,
+        "realseYear": 2015,
+        "usedSpace": 0.0
+    }
+]
