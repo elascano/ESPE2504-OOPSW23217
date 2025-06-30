@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.contactbook.view;
 
 import ec.edu.espe.contactbook.model.Contact;
@@ -18,7 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmContact extends javax.swing.JFrame {
 
-    int id=0;
+    int id = 0;
+
     /**
      * Creates new form FrmContact
      */
@@ -59,7 +56,7 @@ public class FrmContact extends javax.swing.JFrame {
         txaComments = new javax.swing.JTextArea();
         txtBirthDate = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        ListSport = new javax.swing.JList<>();
+        lstSports = new javax.swing.JList<>();
         PnlContactsBotons = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
 
@@ -125,12 +122,12 @@ public class FrmContact extends javax.swing.JFrame {
         txaComments.setRows(5);
         jScrollPane1.setViewportView(txaComments);
 
-        ListSport.setModel(new javax.swing.AbstractListModel<String>() {
+        lstSports.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Soccer", "Football", "Basketball", "Baseball", "Tennis", "Swimming", "Volley" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(ListSport);
+        jScrollPane2.setViewportView(lstSports);
 
         javax.swing.GroupLayout PnlContactsInputLayout = new javax.swing.GroupLayout(PnlContactsInput);
         PnlContactsInput.setLayout(PnlContactsInputLayout);
@@ -271,9 +268,21 @@ public class FrmContact extends javax.swing.JFrame {
         String comments;
         ArrayList<Sport> sports = new ArrayList<>();
         Contact contact;
-        
+
         validateNumbersInId();
-        
+
+        validateFirstName();
+
+        validLastName();
+
+        validateCellPhone();
+
+        validateEmail();
+
+        validateBirthDate();
+
+        validateComments();
+
         //id = Integer.parseInt(txtid.getText());
         firstName = txtFirstName.getText();
         lastName = txtLastName.getText();
@@ -283,26 +292,131 @@ public class FrmContact extends javax.swing.JFrame {
         type = cmbType.getSelectedItem().toString();
         bornOnType = Calendar.getInstance();
         comments = txaComments.getText();
-                
-        contact = new Contact(id,firstName,lastName,celphoneNumber,email,frequentFriend,type,bornOnType,comments,sports);
-        
-        
-        JOptionPane.showMessageDialog(rootPane, "New Contact" + contact);
-        
-        //JOptionPane.showMessageDialog(rootPane, lstSports.getSelectedValues());
+
+        contact = new Contact(id, firstName, lastName, celphoneNumber, email, frequentFriend, type, bornOnType, comments, sports);
+
+        JOptionPane.showMessageDialog(rootPane,
+                "New Contact" + contact);
+
+        JOptionPane.showMessageDialog(rootPane, lstSports.getSelectedValues());
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    public void validateComments() throws HeadlessException {
+        try {
+            if (txaComments.getText().length() > 200) {
+                throw new Exception("El comentario no puede exceder los 200 caracteres");
+            }
+            txaComments.setForeground(Color.BLACK);
+        } catch (Exception ex) {
+            txaComments.setForeground(Color.RED);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error en Comentario", JOptionPane.ERROR_MESSAGE);
+            txaComments.requestFocusInWindow();
+        }
+    }
+
+    public void validateBirthDate() throws HeadlessException {
+        try {
+            if (txtBirthDate.getText().trim().isEmpty()) {
+                throw new Exception("La fecha de nacimiento no puede estar vacía");
+            }
+            if (!txtBirthDate.getText().matches("^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")) {
+                throw new Exception("Formato de fecha inválido. Use dd/mm/aaaa");
+            }
+            txtBirthDate.setForeground(Color.BLACK);
+        } catch (Exception ex) {
+            txtBirthDate.setForeground(Color.RED);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error en Fecha", JOptionPane.ERROR_MESSAGE);
+            txtBirthDate.requestFocusInWindow();
+        }
+    }
+
+    public void validateEmail() throws HeadlessException {
+        try {
+            if (txtEmail.getText().trim().isEmpty()) {
+                throw new Exception("El email no puede estar vacío");
+            }
+            if (!txtEmail.getText().matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+                throw new Exception("Formato de email inválido. Ejemplo: usuario@dominio.com");
+            }
+            txtEmail.setForeground(Color.BLACK);
+        } catch (Exception ex) {
+            txtEmail.setForeground(Color.RED);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error en Email", JOptionPane.ERROR_MESSAGE);
+            txtEmail.requestFocusInWindow();
+        }
+    }
+
+    public void validateCellPhone() throws HeadlessException {
+        try {
+            if (txtCellphoneNumber.getText().trim().isEmpty()) {
+                throw new Exception("El teléfono no puede estar vacío");
+            }
+            if (!txtCellphoneNumber.getText().matches("\\d{10}")) {
+                throw new Exception("El teléfono debe contener exactamente 10 dígitos");
+            }
+            txtCellphoneNumber.setForeground(Color.BLACK);
+        } catch (Exception ex) {
+            txtCellphoneNumber.setForeground(Color.RED);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error en Teléfono", JOptionPane.ERROR_MESSAGE);
+            txtCellphoneNumber.requestFocusInWindow();
+        }
+    }
+
+    public void validLastName() throws HeadlessException {
+        try {
+            if (txtLastName.getText().trim().isEmpty()) {
+                throw new Exception("El apellido no puede estar vacío");
+            }
+            if (!txtLastName.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{2,}")) {
+                throw new Exception("El apellido solo puede contener letras y espacios (mínimo 2 caracteres)");
+            }
+            txtLastName.setForeground(Color.BLACK);
+        } catch (Exception ex) {
+            txtLastName.setForeground(Color.RED);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error en Apellido", JOptionPane.ERROR_MESSAGE);
+            txtLastName.requestFocusInWindow();
+        }
+    }
+
+    public void validateFirstName() throws HeadlessException {
+        try {
+
+            if (txtFirstName.getText().trim().isEmpty()) {
+                txtFirstName.setForeground(Color.RED);
+                throw new Exception("El nombre no puede estar vacío");
+            }
+
+            if (!txtFirstName.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{2,}")) {
+                txtFirstName.setForeground(Color.RED);
+                throw new Exception("Nombre inválido. Solo letras y espacios, mínimo 2 caracteres");
+            }
+
+            txtFirstName.setForeground(Color.BLACK);
+
+        } catch (Exception ex) {
+
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error en Nombre", JOptionPane.ERROR_MESSAGE);
+            txtFirstName.requestFocus();
+        }
+    }
 
     private void txtidFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtidFocusLost
         validateNumbersInId();
+        validateFirstName();
+        validLastName();
+        validateCellPhone();
+        validateEmail();
+        validateBirthDate();
+        validateComments();
     }//GEN-LAST:event_txtidFocusLost
 
     public void validateNumbersInId() throws HeadlessException {
         // TODO add your handling code here:
-        
-        try{
+
+        try {
             id = Integer.parseInt(txtid.getText());
             txtid.setForeground(Color.black);
-        }catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             txtid.setForeground(Color.red);
             JOptionPane.showMessageDialog(rootPane, "please enter digit in the contact id", "Error on Id", JOptionPane.ERROR_MESSAGE);
             txtid.requestFocusInWindow();
@@ -323,16 +437,24 @@ public class FrmContact extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContact.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContact.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContact.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmContact.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContact.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -345,7 +467,6 @@ public class FrmContact extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> ListSport;
     private javax.swing.JPanel PnlContactTitel;
     private javax.swing.JPanel PnlContactsBotons;
     private javax.swing.JPanel PnlContactsInput;
@@ -365,6 +486,7 @@ public class FrmContact extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> lstSports;
     private javax.swing.JTextArea txaComments;
     private javax.swing.JTextField txtBirthDate;
     private javax.swing.JTextField txtCellphoneNumber;
