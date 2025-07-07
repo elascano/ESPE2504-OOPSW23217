@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S24",
+    "price": 899.99,
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "name": "iPhone 15 Pro",
+    "price": 1199.99,
+    "stock": 10
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi Redmi Note 13",
+    "price": 299.99,
+    "stock": 25
+  },
+  {
+    "id": 4,
+    "name": "Motorola Edge 40",
+    "price": 499.99,
+    "stock": 8
+  },
+  {
+    "id": 5,
+    "name": "Google Pixel 8",
+    "price": 799.99,
+    "stock": 12
+  }
+]
