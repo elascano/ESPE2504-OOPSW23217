@@ -322,7 +322,7 @@ public class FrmContact extends javax.swing.JFrame {
 
     } catch (NumberFormatException ex) {
         txtId.setForeground(Color.red);
-        JOptionPane.showMessageDialog(rootPane, "erros, please enter a num", "Error on ID", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "erros, please enter a num in ID", "Error on ID", JOptionPane.ERROR_MESSAGE);
         txtId.requestFocusInWindow();    }
     
     id = Integer.parseInt(txtId.getText());

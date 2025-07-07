@@ -72,16 +72,16 @@ public class FrmContact extends javax.swing.JFrame {
         PmlContactTitleLayout.setHorizontalGroup(
             PmlContactTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PmlContactTitleLayout.createSequentialGroup()
-                .addGap(228, 228, 228)
+                .addGap(223, 223, 223)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PmlContactTitleLayout.setVerticalGroup(
             PmlContactTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PmlContactTitleLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PmlContactTitleLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         jLabel2.setText("Id:");
