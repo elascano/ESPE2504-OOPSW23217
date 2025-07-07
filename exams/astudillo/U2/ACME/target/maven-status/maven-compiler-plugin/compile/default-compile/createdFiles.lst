@@ -1,0 +1,5 @@
+edu\ec\espe\acme\view\FrmListAll$1.class
+edu\ec\espe\acme\controller\FrmListController.class
+edu\ec\espe\acme\controller\MongoDbConecction.class
+edu\ec\espe\acme\model\CellPhones.class
+edu\ec\espe\acme\view\FrmListAll.class

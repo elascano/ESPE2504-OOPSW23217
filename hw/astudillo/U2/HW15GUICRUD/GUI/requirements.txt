@@ -1,0 +1,8 @@
+# Dependencias de MongoDB Atlas
+pymongo==4.0.0
+dnspython==2.3.0  # Necesario para resolución DNS y conexión a MongoDB Atlas
+# Dependencias para manejo de ObjectID
+bson==0.5.10
+# tkinter viene incluido con Python por defecto
+# Para importaciones condicionales
+importlib-metadata==6.0.0
