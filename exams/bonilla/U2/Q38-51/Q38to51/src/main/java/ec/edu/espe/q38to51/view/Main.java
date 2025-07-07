@@ -15,7 +15,6 @@ public class Main {
     
     public static void main(String[] args) {
         
-        // Inicializar todas las clases del modelo
         ArrayList<A> As = new ArrayList<>();
         ArrayList<E> Es = new ArrayList<>();
         ArrayList<F> Fs = new ArrayList<>();
@@ -49,7 +48,6 @@ public class Main {
         Hs.add(g);
         b.setH(Hs);
 
-        //Mostrar
         b.show();
         c.show();
         d.show();
