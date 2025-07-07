@@ -2,56 +2,67 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Forniture by id</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+  <meta charset="UTF-8" />
+  <title>Search Forniture by ID</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
 
-        label,
-        input,
-        button {
-            display: block;
-            margin: 8px 0;
-        }
-
-        .forniture {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    .forniture {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 15px;
+      max-width: 400px;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Forniture by id</h1>
-    <div id="fornitureList"></div>
+  <h1>Search Forniture by ID</h1>
 
-    <script>
-        const apiBase = '/api/forniture';
+  <label for="inputId">Enter ID (e.g., 000120240707):</label>
+  <input type="text" id="inputId" />
+  <button onclick="searchForniture()">Search</button>
 
-        async function fetchForniture() {
-            const res = await fetch(apiBase);
-            const forniture = await res.json();
-            const container = document.getElementById('fornitureList');
-            container.innerHTML = '';
-            forniture.forEach(c => {
-                const div = document.createElement('div');
-                div.className = 'forniture';
-                div.innerHTML = `
-          <strong>ID:</strong> ${c.id || c._id} <br/>
-          <strong>Name:</strong> ${c.name} cm<br/>
-          <strong>Quality:</strong> ${c.quality} cm<br/>
-          <strong>Value:</strong> ${c.value}<br/>
-        `;
-                container.appendChild(div);
-            });
+  <div id="fornitureResult"></div>
+
+  <script>
+    async function searchForniture() {
+      const id = document.getElementById('inputId').value.trim();
+      const container = document.getElementById('fornitureResult');
+      if (!id) {
+        container.innerHTML = 'Please enter an ID';
+        return;
+      }
+
+      container.innerHTML = 'Loading...';
+
+      try {
+        const res = await fetch(`/api/forniture/${id}`);
+
+        if (!res.ok) {
+          container.innerHTML = 'Forniture not found';
+          return;
         }
 
-        fetchCellphones();
-    </script>
+        const c = await res.json();
+        container.innerHTML = `
+          <div class="forniture">
+            <strong>ID:</strong> ${c._id} <br/>
+            <strong>Name:</strong> ${c.name} <br/>
+            <strong>Quality:</strong> ${c.quality} <br/>
+            <strong>Value:</strong> ${c.value} <br/>
+            <strong>Total Cost:</strong> ${c.totalCost || (c.value * c.quality)} <br/>
+          </div>
+        `;
+      } catch (err) {
+        container.innerHTML = 'Error fetching data';
+        console.error(err);
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -7,8 +7,7 @@ const port = 3000;
 
 app.use(express.json());
 app.use('/api', routes);
-
-app.use(express.static('public'));
+app.use(express.static('public')); // Sirve archivos HTML/JS/CSS desde /public
 
 connectDB().then(() => {
   app.listen(port, () => {
