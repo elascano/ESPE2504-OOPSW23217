@@ -1,0 +1,7 @@
+ec\edu\espe\q71to100\controller\Q71to100Main.class
+ec\edu\espe\q71to100\model\Product.class
+ec\edu\espe\q71to100\util\MongoClientConnection.class
+ec\edu\espe\q71to100\view\FrmCRUDProduct.class
+ec\edu\espe\q71to100\controller\FrmCRUDProductController.class
+ec\edu\espe\q71to100\view\FrmCRUDProduct$1.class
+ec\edu\espe\q71to100\util\FileManagerProduct.class
