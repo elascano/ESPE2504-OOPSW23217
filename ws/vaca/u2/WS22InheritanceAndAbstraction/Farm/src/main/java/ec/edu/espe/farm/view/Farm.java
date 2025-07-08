@@ -6,13 +6,13 @@ import java.util.Date;
 
 /**
  *
- * @author Kevin Vaca
+ * @author Jose Yanez
  */
 public class Farm {
     
     public static void main(String[] args) {
         
-        System.out.printl("My farm system.");
+        System.out.println("My farm system.");
         int id = 1;
         String breed = "ponedora";
         Date bornOnDate = new Date();

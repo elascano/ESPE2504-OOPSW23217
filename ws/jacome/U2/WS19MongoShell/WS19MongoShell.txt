@@ -1,0 +1,94 @@
+Microsoft Windows [Versión 10.0.26100.4349]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Mikaela>mongosh "mongodb+srv://Micaela:Micaela@cluster0.7ny5ynf.mongodb.net/" --apiVersion 1
+Current Mongosh Log ID: 686a016afdfac87e8a50eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.7ny5ynf.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.10 (API Version 1)
+Using Mongosh:          2.5.2
+mongosh 2.5.5 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-h0xcbr-shard-0 [primary] test> use Craft_Market
+switched to db Craft_Market
+Atlas atlas-h0xcbr-shard-0 [primary] Craft_Market> db
+Craft_Market
+Atlas atlas-h0xcbr-shard-0 [primary] Craft_Market> db.persons.find()
+[
+  {
+    _id: ObjectId('684e3d806440d386baf85a14'),
+    students: [
+      {
+        id: 1,
+        lastanme: 'lascano',
+        firstname: 'edison',
+        age: 54,
+        salary: 407.86
+      },
+      {
+        id: 2,
+        lastanme: 'jacome',
+        firstname: 'micaela',
+        age: 19,
+        salary: 0
+      },
+      {
+        id: 3,
+        lastanme: 'Olivares',
+        firstname: 'Antonio',
+        age: 34,
+        salary: 1200
+      },
+      {
+        id: 4,
+        lastanme: 'Romero',
+        firstname: 'Gisella',
+        age: 20,
+        salary: 250
+      },
+      {
+        id: 5,
+        lastanme: 'Garces',
+        firstname: 'Joshua',
+        age: 23,
+        salary: 600
+      },
+      {
+        id: 6,
+        lastanme: 'Ortiz',
+        firstname: 'Luis',
+        age: 24,
+        salary: 600
+      },
+      {
+        id: 7,
+        lastanme: 'Torres',
+        firstname: 'Liliana',
+        age: 24,
+        salary: 750
+      },
+      {
+        id: 8,
+        lastanme: 'Acosta',
+        firstname: 'Carlos',
+        age: 42,
+        salary: 1900
+      },
+      {
+        id: 9,
+        lastanme: 'Suares',
+        firstname: 'Cristian',
+        age: 48,
+        salary: 1500
+      },
+      {
+        id: 10,
+        lastanme: 'Lojano',
+        firstname: 'Jose',
+        age: 59,
+        salary: 2500
+      }
+    ]
+  }
+]

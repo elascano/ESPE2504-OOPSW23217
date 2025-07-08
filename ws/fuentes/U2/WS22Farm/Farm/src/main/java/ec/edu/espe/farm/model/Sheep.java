@@ -18,7 +18,7 @@ public class Sheep extends FarmAnimal{
 
     @Override
     public String toString() {
-        return "Sheep{" + "lastSheering=" + getLastSheering() + ", woolWeightKg=" + getWoolWeightKg() + '}';
+        return "Sheep{" + super.toString()+ "lastSheering=" + getLastSheering() + ", woolWeightKg=" + getWoolWeightKg() + '}';
     }
 
     

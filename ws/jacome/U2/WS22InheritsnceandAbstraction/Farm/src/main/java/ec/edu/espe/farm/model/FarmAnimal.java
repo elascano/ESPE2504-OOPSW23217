@@ -11,32 +11,17 @@ public abstract class FarmAnimal {
     private int id;
     private String breed;
     private Date bornOn;
-    
-    public FarmAnimal(int id, String breed, Date bornOn) {
+    private float weight;
+
+    // Constructor
+    public FarmAnimal(int id, String breed, Date bornOn, float weight) {
         this.id = id;
         this.breed = breed;
         this.bornOn = bornOn;
+        this.weight = weight;
     }
 
-    @Override
-    public String toString() {
-        return "FarmAnimal{" + "id=" + id + ", breed=" + breed + ", bornOn=" + bornOn + '}';
-    }
-    
-    public int getAgeInYears() {
-        Date current = new Date();
-        Date age = new Date();
-        int months;
-        //algotithm to compute age
-        months = 10;
-        return months;
-    }
-
-    public abstract void feed(Food food);
-
-    /**
-     * @return the id
-     */
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -74,5 +59,25 @@ public abstract class FarmAnimal {
      */
     public void setBornOn(Date bornOn) {
         this.bornOn = bornOn;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    // Métodos abstractos y comunes
+    public abstract void feed(Food food);
+
+    public boolean poop() {
+        return true;
+    }
+
+    public int getAgeInYears() {
+        // Lógica para calcular edad
+        return 0;
     }
 }
