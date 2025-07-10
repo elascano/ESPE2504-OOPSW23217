@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CRUD Forniture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .forniture {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 15px;
+      max-width: 400px;
+    }
+    label, input, button {
+      margin: 5px 0;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CRUD Forniture</h1>
+
+  <h2>Buscar por ID</h2>
+  <input type="text" id="inputId" placeholder="Ejemplo: 000120240707" />
+  <button onclick="searchForniture()">Buscar</button>
+  <div id="fornitureResult"></div>
+
+  <h2>Lista completa</h2>
+  <button onclick="loadAll()">Cargar todo</button>
+  <div id="allForniture"></div>
+
+  <h2>Agregar nuevo mueble</h2>
+  <input id="newId" placeholder="ID único" />
+  <input id="newName" placeholder="Nombre" />
+  <input id="newQuality" placeholder="Calidad (num)" type="number" />
+  <input id="newValue" placeholder="Valor (num)" type="number" />
+  <button onclick="addForniture()">Agregar</button>
+  <div id="addResult"></div>
+
+  <h2>Editar mueble por ID</h2>
+  <input id="editId" placeholder="ID existente" />
+  <input id="editName" placeholder="Nuevo nombre" />
+  <input id="editQuality" placeholder="Nueva calidad (num)" type="number" />
+  <input id="editValue" placeholder="Nuevo valor (num)" type="number" />
+  <button onclick="editForniture()">Actualizar</button>
+  <div id="editResult"></div>
+
+  <h2>Eliminar mueble por ID</h2>
+  <input id="deleteId" placeholder="ID a eliminar" />
+  <button onclick="deleteForniture()">Eliminar</button>
+  <div id="deleteResult"></div>
+
+  <script>
+    async function searchForniture() {
+      const id = document.getElementById('inputId').value.trim();
+      const container = document.getElementById('fornitureResult');
+      if (!id) {
+        container.innerHTML = 'Por favor ingresa un ID';
+        return;
+      }
+
+      container.innerHTML = 'Cargando...';
+
+      try {
+        const res = await fetch(`/api/forniture/${id}`);
+        if (!res.ok) {
+          container.innerHTML = 'No se encontró el mueble';
+          return;
+        }
+        const c = await res.json();
+        container.innerHTML = `
+          <div class="forniture">
+            <strong>ID:</strong> ${c._id} <br/>
+            <strong>Nombre:</strong> ${c.name} <br/>
+            <strong>Calidad:</strong> ${c.quality} <br/>
+            <strong>Valor:</strong> ${c.value} <br/>
+            <strong>Costo Total:</strong> ${c.totalCost || (c.value * c.quality)} <br/>
+          </div>
+        `;
+      } catch (err) {
+        container.innerHTML = 'Error al obtener datos';
+        console.error(err);
+      }
+    }
+
+    async function loadAll() {
+      const container = document.getElementById('allForniture');
+      container.innerHTML = 'Cargando lista completa...';
+
+      try {
+        const res = await fetch('/api/forniture');
+        if (!res.ok) {
+          container.innerHTML = 'Error cargando lista';
+          return;
+        }
+        const list = await res.json();
+        if (list.length === 0) {
+          container.innerHTML = 'No hay muebles registrados';
+          return;
+        }
+        container.innerHTML = list.map(c => `
+          <div class="forniture">
+            <strong>ID:</strong> ${c._id} <br/>
+            <strong>Nombre:</strong> ${c.name} <br/>
+            <strong>Calidad:</strong> ${c.quality} <br/>
+            <strong>Valor:</strong> ${c.value} <br/>
+            <strong>Costo Total:</strong> ${c.totalCost || (c.value * c.quality)} <br/>
+          </div>
+        `).join('');
+      } catch (err) {
+        container.innerHTML = 'Error al cargar la lista';
+        console.error(err);
+      }
+    }
+
+    async function addForniture() {
+      const id = document.getElementById('newId').value.trim();
+      const name = document.getElementById('newName').value.trim();
+      const quality = Number(document.getElementById('newQuality').value);
+      const value = Number(document.getElementById('newValue').value);
+      const container = document.getElementById('addResult');
+
+      if (!id || !name || !quality || !value) {
+        container.innerHTML = 'Todos los campos son obligatorios';
+        return;
+      }
+
+      container.innerHTML = 'Agregando...';
+
+      try {
+        const res = await fetch('/api/forniture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ _id: id, name, quality, value })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          container.innerHTML = `Error: ${err.error || 'No se pudo agregar'}`;
+          return;
+        }
+
+        container.innerHTML = 'Mueble agregado con éxito';
+        loadAll();
+      } catch (err) {
+        container.innerHTML = 'Error al agregar';
+        console.error(err);
+      }
+    }
+
+    async function editForniture() {
+      const id = document.getElementById('editId').value.trim();
+      const name = document.getElementById('editName').value.trim();
+      const quality = Number(document.getElementById('editQuality').value);
+      const value = Number(document.getElementById('editValue').value);
+      const container = document.getElementById('editResult');
+
+      if (!id || !name || !quality || !value) {
+        container.innerHTML = 'Todos los campos son obligatorios';
+        return;
+      }
+
+      container.innerHTML = 'Actualizando...';
+
+      try {
+        const res = await fetch(`/api/forniture/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, quality, value })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          container.innerHTML = `Error: ${err.error || 'No se pudo actualizar'}`;
+          return;
+        }
+
+        container.innerHTML = 'Mueble actualizado con éxito';
+        loadAll();
+      } catch (err) {
+        container.innerHTML = 'Error al actualizar';
+        console.error(err);
+      }
+    }
+
+    async function deleteForniture() {
+      const id = document.getElementById('deleteId').value.trim();
+      const container = document.getElementById('deleteResult');
+
+      if (!id) {
+        container.innerHTML = 'Debes ingresar un ID';
+        return;
+      }
+
+      if (!confirm(`¿Estás seguro de que deseas eliminar el mueble con ID: ${id}?`)) return;
+
+      container.innerHTML = 'Eliminando...';
+
+      try {
+        const res = await fetch(`/api/forniture/${id}`, {
+          method: 'DELETE'
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          container.innerHTML = `Error: ${err.error || 'No se pudo eliminar'}`;
+          return;
+        }
+
+        container.innerHTML = 'Mueble eliminado con éxito';
+        loadAll();
+      } catch (err) {
+        container.innerHTML = 'Error al eliminar';
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+
+</html>
