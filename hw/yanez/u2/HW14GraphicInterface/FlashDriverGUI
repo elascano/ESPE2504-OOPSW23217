@@ -1,0 +1,110 @@
+import tkinter as tk
+from tkinter import messagebox
+from pymongo import MongoClient
+
+# 🔹 Connect to MongoDB Atlas
+client = MongoClient("mongodb+srv://jgyanez2:jgyanez2@cluster0.bdnssw7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+db = client["FlashDriveDB"]
+collection = db["flashDrive"]
+
+# 🔹 Function to save data in MongoDB
+def save_data():
+    flashDrive = {
+        "brand": brand_entry.get(),
+        "capacityGB": capacity_entry.get(),
+        "price": price_entry.get(),
+        "color": color_entry.get(),
+        "usbType": usb_entry.get(),
+        "stock": stock_entry.get(),
+        "warrantyMonths": warranty_entry.get(),
+        "discountPercentage": discount_entry.get(),
+        "finalPrice": final_price_entry.get()
+    }
+
+    # 🔹 Validate input fields
+    for key, value in flashDrive.items():
+        if not value:
+            messagebox.showerror("Error", f"El campo '{key}' no puede estar vacío.")
+            return
+
+    # 🔹 Insert into MongoDB
+    collection.insert_one(flashDrive)
+    messagebox.showinfo("✅ Éxito", f"Flash Drive guardado correctamente!\nPrecio final: ${flashDrive['finalPrice']}")
+    clear_fields()
+
+# 🔹 Function to clear input fields
+def clear_fields():
+    brand_entry.delete(0, tk.END)
+    capacity_entry.delete(0, tk.END)
+    price_entry.delete(0, tk.END)
+    color_entry.delete(0, tk.END)
+    usb_entry.delete(0, tk.END)
+    stock_entry.delete(0, tk.END)
+    warranty_entry.delete(0, tk.END)
+    discount_entry.delete(0, tk.END)
+    final_price_entry.delete(0, tk.END)
+
+# 🔹 Function to retrieve and display stored records
+def view_records():
+    records_window = tk.Toplevel(root)
+    records_window.title("Stored Flash Drives")
+
+    # 🔹 Fetch data from MongoDB
+    records = collection.find()
+    for record in records:
+        tk.Label(records_window, text=f"📌 {record['brand']} - {record['capacityGB']}GB - ${record['finalPrice']}").pack()
+
+# 🔹 Create GUI Window
+root = tk.Tk()
+root.title("Formulario Flash Drive")
+root.geometry("350x450")
+
+# 🔹 Labels and Input Fields
+tk.Label(root, text="Marca:").pack()
+brand_entry = tk.Entry(root)
+brand_entry.pack()
+
+tk.Label(root, text="Capacidad (GB):").pack()
+capacity_entry = tk.Entry(root)
+capacity_entry.pack()
+
+tk.Label(root, text="Precio:").pack()
+price_entry = tk.Entry(root)
+price_entry.pack()
+
+tk.Label(root, text="Color:").pack()
+color_entry = tk.Entry(root)
+color_entry.pack()
+
+tk.Label(root, text="Tipo USB:").pack()
+usb_entry = tk.Entry(root)
+usb_entry.pack()
+
+tk.Label(root, text="Stock disponible:").pack()
+stock_entry = tk.Entry(root)
+stock_entry.pack()
+
+tk.Label(root, text="Garantía (meses):").pack()
+warranty_entry = tk.Entry(root)
+warranty_entry.pack()
+
+tk.Label(root, text="Descuento (%):").pack()
+discount_entry = tk.Entry(root)
+discount_entry.pack()
+
+tk.Label(root, text="Precio Final:").pack()
+final_price_entry = tk.Entry(root)
+final_price_entry.pack()
+
+# 🔹 Buttons for saving, clearing, and viewing records
+save_button = tk.Button(root, text="Guardar en MongoDB", command=save_data)
+save_button.pack()
+
+clear_button = tk.Button(root, text="Limpiar", command=clear_fields)
+clear_button.pack()
+
+view_button = tk.Button(root, text="Ver registros guardados", command=view_records)
+view_button.pack()
+
+# 🔹 Run interface
+root.mainloop()

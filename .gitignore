@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-# Compiled class file
+# Compiled class files
 *.class
 
-# Log file
+# Log files
 *.log
 
 # BlueJ files
@@ -11,7 +10,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -20,36 +19,26 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual machine crash logs
 hs_err_pid*
-/ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
-=======
+
+# Ignorar carpetas target de distintos proyectos
+/hw/unda/U2/ScissorsDB/target/
+/hw/unda/U2/HW12Cluster0/ScissorsDB/target/
+/hw/unda/U2/ScissorCrud/target/
 /hw/caizapanta/u2/HW13ObjectCRUD/CableCRUD/target/
 /ws/vaca/u2/WS22InheritanceAndAbstraction/Farm/target/
-<<<<<<< HEAD
+/ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
 /ws/vaca/u2/WS24/ContactBook/target/
-=======
->>>>>>> acd38e600825e3ceb3f0abfe4808bea272354bc6
 /hw/vaca/u2/HW13ObjectCRUD/CRUD.java/War_Game_V.4.0.0/src/main/java/ec/edu/espe/war_game/model/MongoDB.java
 /ws/vaca/u2/WS23tutoria/Farm/target/
-<<<<<<< HEAD
-<<<<<<< HEAD
 /ws/astudillo/U2/WS24UI/ContactBook/target/
-=======
 /ws/bonilla/U2/WS24GUI/ContactBook/target/
->>>>>>> 0efa52dbc9f36ff1a16085aec2ea3c546a631bdc
-=======
 /ws/andrade/u2/Workshop 24/ContactBook/target/
-=======
-/ws/bonilla/U2/WS24GUI/ContactBook/target/
 /ws/sanchez/u2/WS24GUI/ContactBook/target/
->>>>>>> 20e0273229e733cea1798f49803150b26b4291f9
->>>>>>> 69244c3d4c7d5d0f605f01bb5545e1c4345ce372
-<<<<<<< HEAD
->>>>>>> 94be2a63f526a12019c920631adca76cbbff3dda
 /ws/vaca/u2/WS25Error/ContactBook/target/
 /exams/vaca/u2/Q38-51/Q38To51/target/
-=======
 /ws/sanchez/u2/WS25Menu/ContactBook/target/
 /ws/bonilla/U2/WS17Libreries/Q38to51/target/
->>>>>>> 4e5a5a41cd47e47f3f760979351c0efd06e5008f
+
+/hw/unda/U2/HW13Crud/ScissorCrud/target/

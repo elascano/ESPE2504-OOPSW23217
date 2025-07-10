@@ -1,0 +1,44 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\chica> mongosh "mongodb+srv://cluster0.dqlf2xq.mongodb.net/" --apiVersion 1 --username machicaiza22
+Enter password: ***
+Current Mongosh Log ID: 686ef6060894ba866d50eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.dqlf2xq.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.11 (API Version 1)
+Using Mongosh:          2.5.2
+mongosh 2.5.5 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-l7tj3w-shard-0 [primary] test> db
+test
+Atlas atlas-l7tj3w-shard-0 [primary] test> use MiBase
+switched to db MiBase
+Atlas atlas-l7tj3w-shard-0 [primary] MiBase> db
+MiBase
+Atlas atlas-l7tj3w-shard-0 [primary] MiBase> db.persons.find()
+[
+  {
+    _id: ObjectId('686ef4e814846d84e450eb67'),
+    students: [
+      {
+        id: 1,
+        lastname: 'lascano',
+        firstname: 'edison',
+        age: 57,
+        salary: 4000
+      },
+      {
+        id: 2,
+        lastname: 'chicaiza',
+        firstname: 'alexis',
+        age: 20,
+        salary: 0
+      }
+    ]
+  }
+]
+Atlas atlas-l7tj3w-shard-0 [primary] MiBase>
