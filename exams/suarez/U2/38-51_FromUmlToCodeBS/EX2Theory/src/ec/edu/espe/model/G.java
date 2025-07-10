@@ -4,6 +4,6 @@ package ec.edu.espe.model;
  *
  * @author LABS-ESPE
  */
-public class G {
+public class G {        //0.5
     
 }
