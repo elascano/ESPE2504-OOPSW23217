@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Forniture by ID</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .forniture {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 15px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Search Forniture by ID</h1>
+
+  <label for="inputId">Enter ID (e.g., 000120240707):</label>
+  <input type="text" id="inputId" />
+  <button onclick="searchForniture()">Search</button>
+
+  <div id="fornitureResult"></div>
+
+  <script>
+    async function searchForniture() {
+      const id = document.getElementById('inputId').value.trim();
+      const container = document.getElementById('fornitureResult');
+      if (!id) {
+        container.innerHTML = 'Please enter an ID';
+        return;
+      }
+
+      container.innerHTML = 'Loading...';
+
+      try {
+        const res = await fetch(`/api/forniture/${id}`);
+
+        if (!res.ok) {
+          container.innerHTML = 'Forniture not found';
+          return;
+        }
+
+        const c = await res.json();
+        container.innerHTML = `
+          <div class="forniture">
+            <strong>ID:</strong> ${c._id} <br/>
+            <strong>Name:</strong> ${c.name} <br/>
+            <strong>Quality:</strong> ${c.quality} <br/>
+            <strong>Value:</strong> ${c.value} <br/>
+            <strong>Total Cost:</strong> ${c.totalCost || (c.value * c.quality)} <br/>
+          </div>
+        `;
+      } catch (err) {
+        container.innerHTML = 'Error fetching data';
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author Bonilla David Softcrafters
+ * @author Micaela Jácome
  */
 public class Farm {
 

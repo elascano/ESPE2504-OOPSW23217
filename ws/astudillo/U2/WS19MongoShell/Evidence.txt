@@ -1,0 +1,46 @@
+Microsoft Windows [Version 10.0.19045.5965]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\david>mongosh "mongodb+srv://cluster0.gj7cw6m.mongodb.net/" --apiVersion 1 --username neolukk
+Enter password: *******
+Current Mongosh Log ID: 684db53ee0333963ba50eb66
+Connecting to:          mongodb+srv://<credentials>@cluster0.gj7cw6m.mongodb.net/?appName=mongosh+2.5.2
+Using MongoDB:          8.0.9 (API Version 1)
+Using Mongosh:          2.5.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-9tsh5c-shard-0 [primary] test> use OOP
+switched to db OOP
+Atlas atlas-9tsh5c-shard-0 [primary] OOP> db
+OOP
+Atlas atlas-9tsh5c-shard-0 [primary] OOP> db.persons.find()
+[
+  {
+    _id: ObjectId('68487237faf1f5dcfd6a0a83'),
+    id: '1',
+    name: 'Gerald',
+    age: 19,
+    email: 'geraldastudillo1234@gmail.com',
+    phone: '0960013522',
+    major: 'Software Engeneering',
+    gpa: 12,
+    address: 'Monserrat',
+    gender: 'Male',
+    enrolled: true
+  },
+  {
+    _id: ObjectId('684872ecfaf1f5dcfd6a0a84'),
+    id: '2',
+    name: 'Erick',
+    age: 19,
+    email: 'erick1213@gmail.com',
+    phone: '0987654321',
+    major: 'BIO',
+    gpa: 12,
+    address: 'Monserrat',
+    gender: 'Male',
+    enrolled: true
+  }
+]
+Atlas atlas-9tsh5c-shard-0 [primary] OOP>
