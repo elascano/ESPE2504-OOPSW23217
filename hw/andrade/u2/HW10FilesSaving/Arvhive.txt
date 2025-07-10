@@ -1,0 +1,34 @@
+
+const fs = require('fs');
+
+
+class Student {
+    constructor(id, name, age, email, phone, major, gpa, address, gender, enrolled) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.phone = phone;
+        this.major = major;
+        this.gpa = gpa;
+        this.address = address;
+        this.gender = gender;
+        this.enrolled = enrolled;
+    }
+}
+
+const students = [
+    new Student(1, 'Juan Pérez', 20, 'juan@example.com', '0999999999', 'Ingeniería', 3.8, 'Calle Falsa 123', 'Masculino', true),
+    new Student(2, 'María Gómez', 22, 'maria@example.com', '0988888888', 'Medicina', 3.9, 'Av. Siempre Viva 742', 'Femenino', true)
+];
+
+
+const jsonData = JSON.stringify(students, null, 2);
+
+fs.writeFile('students.json', jsonData, (err) => {
+    if (err) {
+        console.error('Error al guardar el archivo:', err);
+    } else {
+        console.log('Archivo "students.json" guardado correctamente.');
+    }
+});
