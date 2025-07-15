@@ -1,0 +1,5 @@
+<input type="text" id="searchId" placeholder="Buscar por ID">
+<button onclick="findProduct()">Buscar</button>
+<button onclick="showCreateForm()">Crear Nuevo Producto</button>
+
+<table id="productTable"></table>

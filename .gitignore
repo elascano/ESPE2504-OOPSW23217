@@ -42,5 +42,10 @@ hs_err_pid*
 /ws/bonilla/U2/WS17Libreries/Q38to51/target/
 
 /hw/unda/U2/HW13Crud/ScissorCrud/target/
+<<<<<<< HEAD
 /ws/andrade/u3/Ws28/Taxes/nbproject/
 /ws/andrade/u3/Ws28/Taxes/target/
+=======
+/ws/bonilla/U3/WS28UnitTest/Taxes/nbproject/
+/ws/bonilla/U3/WS28UnitTest/Taxes/target/
+>>>>>>> bfd67c76becbae0edbe4645fa3907a6fdf36644e
