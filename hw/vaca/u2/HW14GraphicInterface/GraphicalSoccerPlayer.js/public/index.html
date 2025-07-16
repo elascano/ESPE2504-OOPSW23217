@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soccer Players</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .player-details {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            padding: 10px;
+            background-color: #ffeeee;
+            border: 1px solid #ffcccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soccer Players</h1>
+    
+    <div id="errorMessage" class="error" style="display: none;"></div>
+    
+    <table id="playersTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Club</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="playersBody"></tbody>
+    </table>
+    
+    <div id="playerDetails" class="player-details">
+        Select a player to view details
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000/players';
+        
+        // Load all players when page loads
+        window.onload = loadPlayers;
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            setTimeout(() => errorDiv.style.display = 'none', 5000);
+        }
+        
+        async function loadPlayers() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error('Failed to load players');
+                const players = await response.json();
+                displayPlayers(players);
+            } catch (error) {
+                showError('Error loading players: ' + error.message);
+                console.error('Error:', error);
+            }
+        }
+        
+        function displayPlayers(players) {
+            const tbody = document.getElementById('playersBody');
+            tbody.innerHTML = '';
+            
+            if (players.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No players found</td></tr>';
+                return;
+            }
+            
+            players.forEach(player => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${player.name || '-'}</td>
+                    <td>${player.position || '-'}</td>
+                    <td>${player.club || '-'}</td>
+                    <td>
+                        <button onclick="showPlayer('${player._id || player.id}')">View</button>
+                        <button onclick="deletePlayer('${player._id || player.id}')">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        async function showPlayer(id) {
+            try {
+                const response = await fetch(`${API_URL}/${id}`);
+                if (!response.ok) throw new Error('Player not found');
+                const player = await response.json();
+                
+                const detailsDiv = document.getElementById('playerDetails');
+                detailsDiv.innerHTML = `
+                    <h3>${player.name || 'Unknown Player'}</h3>
+                    <p><strong>Position:</strong> ${player.position || '-'}</p>
+                    <p><strong>Club:</strong> ${player.club || '-'}</p>
+                    <p><strong>Nationality:</strong> ${player.nationality || '-'}</p>
+                    <p><strong>Age:</strong> ${player.age || '-'}</p>
+                `;
+            } catch (error) {
+                showError('Error loading player: ' + error.message);
+                console.error('Error:', error);
+            }
+        }
+        
+        async function deletePlayer(id) {
+            if (confirm('Are you sure you want to delete this player?')) {
+                try {
+                    const response = await fetch(`${API_URL}/${id}`, { 
+                        method: 'DELETE' 
+                    });
+                    
+                    if (!response.ok) throw new Error('Delete failed');
+                    
+                    loadPlayers();
+                    document.getElementById('playerDetails').innerHTML = 'Player deleted successfully';
+                } catch (error) {
+                    showError('Error deleting player: ' + error.message);
+                    console.error('Error:', error);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

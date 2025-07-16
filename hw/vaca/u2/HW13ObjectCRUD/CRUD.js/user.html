@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <title>Build a CRUD App with Node.js and MongoDB</title>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1 class="text-center mb-5 mt-5 text-danger"><b>Build a CRUD App with Node.js and MongoDB - Insert Data into MongoDB Database - 2</b></h1>
+            <div class="card mb-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col col-6">Sample Data</div>
+                        <div class="col col-6">
+                            <button type="button" class="btn btn-primary btn-sm float-end" onclick="makeModal('Add User', 'Add', 'insertData')">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<div id="modalArea"></div>
+
+<script>
+    
+var userModalElement;
+
+function makeModal(title, button_value, callback)
+{
+    let html = `
+    <div class="modal" tabindex="-1" id="userModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="userform">
+                    <div class="modal-header">
+                        <h5 class="modal-title">${title}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" id="name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Position</label>
+        <input type="text" name="position" id="position" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Club</label>
+        <input type="text" name="club" id="club" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Nationality</label>
+        <input type="text" name="nationality" id="nationality" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Age</label>
+        <input type="number" name="age" id="age" class="form-control" />
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" onclick="${callback}()">${button_value}</button>
+</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    `;
+
+    document.querySelector('#modalArea').innerHTML = html;
+
+    userModalElement = new bootstrap.Modal(document.getElementById('userModal'));
+
+    userModalElement.show();
+}
+
+function insertData()
+{
+ 
+}
+
+</script>
