@@ -1,0 +1,15 @@
+{
+  "name": "ws29oopwithjs",
+  "version": "1.0.0",
+  "description": "A simple JavaScript project for learning OOP concepts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Vaca",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
