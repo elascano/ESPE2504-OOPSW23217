@@ -1,0 +1,17 @@
+{
+  "name": "poo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sanchez Julio",
+  "license": "ISC",
+  "description": "insert customers in opp database",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4",
+    "react": "^19.1.0"
+  }
+}
