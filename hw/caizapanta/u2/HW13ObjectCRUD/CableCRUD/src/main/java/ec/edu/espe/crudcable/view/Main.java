@@ -2,13 +2,14 @@ package ec.edu.espe.crudcable.view;
 
 import java.util.Scanner;
 import java.util.UUID;
-import ec.edu.espe.cablecrud.model.CableDB;
+import ec.edu.espe.cablecrud.model.CableCRUD;
 import ec.edu.espe.cablecrud.model.CableDB;
 
 /**
  *
  * @author Tammy Caizapanta SoftCrafters DCCO ESPE
  */
+
 public class Main {
     public static void main(String[] args) {
         CableDB dao = new CableDB();
@@ -40,14 +41,14 @@ public class Main {
                 dao.insertCable(cable);
 
             } else if (option == 2) {
-                dao.showCables();
-
             } else if (option == 3) {
                 System.out.print("Cable ID to update: ");
                 String id = sc.nextLine();
                 System.out.print("New price per meter: ");
                 double newPrice = sc.nextDouble();
-                sc.nextLine(); // consume newline
+                sc.nextLine(); // consume 
+                dao.showCables();
+newline
 
                 dao.updatePrice(id, newPrice);
 
