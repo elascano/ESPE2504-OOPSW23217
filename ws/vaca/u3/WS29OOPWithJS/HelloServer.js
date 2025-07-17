@@ -5,8 +5,8 @@ const port = 3019; //port number 443 is reserved for HTTP
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200; //status code 200 means OK
-    res.setHeader('Content-Type', 'text/plain'); //type toplain or json
-    res.end('Hello Kevin!\n'); //end the response with Hello World
+    res.setHeader('Content-Type', 'text/html'); //type toplain or json
+    res.end('<b>Hello</b>, <i>Kevin Vaca</i>'); //end the response with Hello World
 });
 
 server.listen(port, hostname, () =>  {
