@@ -1,15 +1,15 @@
 {
   "name": "ws29oopwithjs",
   "version": "1.0.0",
+  "desciption": "A simple JavaScript project for learning OOP concepts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mateo Unda",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "3.1.10"
   }
 }
