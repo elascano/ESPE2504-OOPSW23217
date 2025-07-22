@@ -1,0 +1,17 @@
+[tool.pyright]
+include = ["src"]
+exclude = ["**/__pycache__"]
+venvPath = "."
+venv = "venv"
+
+[tool.pylint]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring", 
+    "missing-function-docstring"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
