@@ -10,4 +10,5 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>ec.edu.espe.guifactory.GUIFactory</exec.mainClass>
     </properties>
+    <name>GUIFactoryCorrect</name>
 </project>
