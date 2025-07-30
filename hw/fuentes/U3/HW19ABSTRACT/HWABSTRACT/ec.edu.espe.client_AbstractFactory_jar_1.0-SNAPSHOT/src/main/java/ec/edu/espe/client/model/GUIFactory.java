@@ -28,6 +28,6 @@ public abstract class GUIFactory {
     }
     
     public abstract Button createButton();
-    public abstract Menu createeMenu();
+    public abstract Menu createMenu();
     
 }
