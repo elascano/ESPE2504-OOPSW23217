@@ -16,6 +16,7 @@ import com.mongodb.WriteResult;
 
 public class MongoDB {
     public static void main(String[] args) {
+        
         MongoClient mongo = createConnection();
 
         if (mongo != null) {
@@ -23,16 +24,16 @@ public class MongoDB {
                 DB db = mongo.getDB("WarGame");
                 System.out.println("Conexion a la BD llamada WarGame MongoDB Atlas");
                 
-                //deleteUser(db, "Users", "Edison2025");
-                //updateId(db, "Users", "WG-00", "WG-05", true, null);
-                //readCollection(db, "Users");
-                //searchSector(db, "Users", "Conocoto");
-                
-                //updateSector(db, "Users", "Comite del Pueblo", "Sangolqui", true, "type", "Subordinate");
-                //System.out.println("Despues");
-                readCollection(db, "Users");
-                //deleteUser(db, "Users", "Edison's");
+                /*
+                searchSector(db, "Users", "Conocoto");
 
+                readCollection(db, "Users");
+
+                updateId(db, "Users", "WG-00", "WG-05", true, null);
+                updateSector(db, "Users", "Comite del Pueblo", "Sangolqui", true, "type", "Subordinate");
+
+                deleteUser(db, "Users", "Edison's");
+                */
 
             } finally {
                 mongo.close();
