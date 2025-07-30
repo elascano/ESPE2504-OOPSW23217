@@ -5,7 +5,7 @@ import ec.edu.espe.guifactory.model.Button;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO
  */
 public class LinuxButton extends Button {
 

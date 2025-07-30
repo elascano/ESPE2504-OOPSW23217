@@ -5,7 +5,7 @@ import ec.edu.espe.guifactory.model.Menu;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO
  */
 public class LinuxMenu extends Menu {
 

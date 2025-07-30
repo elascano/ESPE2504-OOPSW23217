@@ -7,7 +7,7 @@ import ec.edu.espe.guifactory.model.WinFactory;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO 
  */
 public abstract class GUIFactory {
     public static GUIFactory getFactory() {

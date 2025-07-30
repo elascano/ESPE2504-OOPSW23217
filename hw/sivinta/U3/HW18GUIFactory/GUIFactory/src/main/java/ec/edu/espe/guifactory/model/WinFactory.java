@@ -1,4 +1,3 @@
-
 package ec.edu.espe.guifactory.model;
 
 import ec.edu.espe.guifactory.controller.GUIFactory;
@@ -7,7 +6,7 @@ import ec.edu.espe.guifactory.view.WinMenu;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO
  */
 public class WinFactory extends GUIFactory { 
     public Button createButton() { 

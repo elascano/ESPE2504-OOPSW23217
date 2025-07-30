@@ -2,7 +2,7 @@ package ec.edu.espe.guifactory.model;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO
  */
 public abstract class Menu {
     public String caption;

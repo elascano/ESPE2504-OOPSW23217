@@ -6,7 +6,7 @@ import ec.edu.espe.guifactory.view.LinuxMenu;
 
 /**
  *
- * @author Bonilla David SoftCrafters
+ * @author Jahir Sivinta DDCO
  */
 public class LinuxFactory extends GUIFactory{ 
     public Button createButton(){ 
