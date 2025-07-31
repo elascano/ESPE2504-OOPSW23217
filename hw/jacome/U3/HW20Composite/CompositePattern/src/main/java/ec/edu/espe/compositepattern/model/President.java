@@ -19,7 +19,7 @@ public class President extends Supervisor{
     }
 
     public void stateName() {
-// Do processing special to presidential naming
+
         super.stateName();
     }
 

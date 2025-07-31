@@ -9,7 +9,7 @@ public class Client {
     public static Employee employee;
 
     public static void doClientTasks() {
-        // Do work with this employee 
+        
         employee.stateName();
     }
 
