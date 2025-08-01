@@ -4,6 +4,10 @@
  */
 package ec.edu.espe.ustax.model;
 
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import org.json.JSONObject;
+
 /**
  *
  * @author jorge
