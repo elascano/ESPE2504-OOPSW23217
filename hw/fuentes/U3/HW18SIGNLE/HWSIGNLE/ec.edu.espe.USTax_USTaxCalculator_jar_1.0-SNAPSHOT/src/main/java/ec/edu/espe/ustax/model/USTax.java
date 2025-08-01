@@ -10,8 +10,10 @@ package ec.edu.espe.ustax.model;
  */
 public class USTax {
     private static USTax instance;
-    private USTax(USTax instance){
-        this.instance = instance;
+    private float taxRate;
+    
+    private USTax(){
+        this.taxRate=loadTaxFromConfigFile();
         
     }
     public static USTax getInstance(){
@@ -20,8 +22,27 @@ public class USTax {
         return instance;
     }
     
-    public float CalculatesalesTotal(){
-        return 0.0F;
+    private float loadTaxFromConfigFile(){
+        float defaultRate = 0.15F;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("taxRate.json")) {
+            if (input != null) {
+                String jsonText = new String(input.readAllBytes(), StandardCharsets.UTF_8);
+                JSONObject jsonObject = new JSONObject(jsonText);
+                return jsonObject.getFloat("taxRate");
+            } else {
+                System.out.println("Config.json not found. Using default rate..");
+            }
+        } catch (Exception e) {
+            System.out.println("Error reading JSON: " + e.getMessage());
+        }
+        return defaultRate;
     }
     
+    public float calculateSalesTotal(float baseAmount) {
+        return baseAmount + (baseAmount * taxRate);
+    }
+
+    public float getTaxRate() {
+        return taxRate;
+    }
 }
