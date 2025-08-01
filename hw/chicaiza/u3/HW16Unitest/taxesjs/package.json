@@ -1,0 +1,14 @@
+{
+  "name": "taxesjs",
+  "version": "1.0.0",
+  "description": "Conversión del proyecto Taxes de Java a JavaScript",
+  "main": "src/Taxes.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
