@@ -2,7 +2,7 @@
 
 package ec.edu.espe.template.view;
 
-import ec.edu.espe.template.model.Coffe;
+import ec.edu.espe.template.model.Coffee;
 import ec.edu.espe.template.model.Tea;
 
 /**
@@ -13,7 +13,7 @@ public class BeverageTest {
 
     public static void main(String[] args) {
         Tea tea=new Tea();
-        Coffe coffe=new Coffe();
+        Coffee coffe=new Coffee();
         
         System.out.println("Tea..");
         tea.prepareRecipe();

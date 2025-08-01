@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  *
  * @author Isaac Maisincho Crafters_Market DCCO ESPE
  */
-public class Coffe extends CaffeineBeverage {
+public class Coffee extends CaffeineBeverage {
 
     @Override
     public void brew() {
