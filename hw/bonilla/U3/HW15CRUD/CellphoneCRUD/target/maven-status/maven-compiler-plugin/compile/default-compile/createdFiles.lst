@@ -1,0 +1,5 @@
+ec\edu\espe\cellphonecrud\controller\CellphoneCRUD.class
+ec\edu\espe\cellphonecrud\controller\MongoClientConnection.class
+ec\edu\espe\cellphonecrud\view\Menu.class
+ec\edu\espe\cellphonecrud\controller\FileManagerCellphone.class
+ec\edu\espe\cellphonecrud\model\Cellphone.class
