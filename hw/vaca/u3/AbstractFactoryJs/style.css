@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.windows-btn {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 2px;
+}
+
+.linux-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.windows-menu {
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+
+.windows-menu li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.linux-menu {
+    list-style: none;
+    padding: 0;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.linux-menu li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+a {
+    color: #06c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

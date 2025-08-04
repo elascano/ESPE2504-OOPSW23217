@@ -12,6 +12,13 @@ public class LinuxMenu extends Menu{
 
     @Override
     public void paint() {
+<<<<<<< HEAD
         System.out.println("I'm a WinMenu: " + caption);
     }
+=======
+        System.out.println("I'm a LinuxMenu: " + caption);
+
+    }
+    
+>>>>>>> 1e4c7996c2a22e02abbfff4a34b99d02ef14e579
 }
