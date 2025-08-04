@@ -14,6 +14,14 @@ public class LinuxButton extends Button{
 
     @Override
     public void paint() {
+<<<<<<< HEAD
         System.out.println("I'm a Linux Button: " + caption);
+=======
+        System.out.println("I'm a LinuxButton :" + caption);
+        System.out.println("------------");
+        System.out.println("| " + String.format("%-11s", caption) + " |");
+        System.out.println("------------");
+        
+>>>>>>> 1e4c7996c2a22e02abbfff4a34b99d02ef14e579
     }
 }

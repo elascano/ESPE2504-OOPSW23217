@@ -15,5 +15,13 @@ public class WinButton extends Button{
     @Override
     public void paint() {
         System.out.println("I'm a WinButton :" + caption);
+<<<<<<< HEAD
+=======
+        System.out.println("------------");
+        System.out.println("| " + String.format("%-11s", caption) + " |");
+        System.out.println("------------");
+        
+        
+>>>>>>> 1e4c7996c2a22e02abbfff4a34b99d02ef14e579
     }
 }

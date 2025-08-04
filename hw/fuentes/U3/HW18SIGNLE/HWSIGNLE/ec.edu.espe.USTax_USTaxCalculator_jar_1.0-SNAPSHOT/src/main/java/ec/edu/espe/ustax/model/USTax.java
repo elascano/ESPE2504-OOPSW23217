@@ -4,6 +4,13 @@
  */
 package ec.edu.espe.ustax.model;
 
+<<<<<<< HEAD
+=======
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import org.json.JSONObject;
+
+>>>>>>> 1e4c7996c2a22e02abbfff4a34b99d02ef14e579
 /**
  *
  * @author jorge
