@@ -7,7 +7,7 @@ import ec.edu.espe.view.MazeASCIIPrinter;
 import ec.edu.espe.view.MazeRenderer;
 
 import java.util.Scanner;
-
+//Author: Carlos Paillacho
 public class Maze {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
