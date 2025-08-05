@@ -22,6 +22,7 @@ public class Application {
         ibm.addObserver(b);
 
         ibm.setPrice(120.10);
+        ibm.setPrice(100.00);
         ibm.setPrice(121.00);
         ibm.setPrice(120.50);
         ibm.setPrice(120.75);
