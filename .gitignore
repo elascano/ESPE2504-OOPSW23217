@@ -1,16 +1,5 @@
-# Compiled class files
+# === Java build artifacts ===
 *.class
-
-# Log files
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files
 *.jar
 *.war
 *.nar
@@ -19,34 +8,46 @@
 *.tar.gz
 *.rar
 
-# Virtual machine crash logs
+# === Logs ===
+*.log
 hs_err_pid*
 
-# Ignorar carpetas target de distintos proyectos
+# === IDE-specific ===
+*.ctxt         # BlueJ
+.mtj.tmp/      # J2ME
+
+# === Maven/Gradle output ===
+target/
+nbproject/
+
+# === Ignorar archivos específicos ===
+/hw/vaca/u2/HW13ObjectCRUD/CRUD.java/War_Game_V.4.0.0/src/main/java/ec/edu/espe/war_game/model/MongoDB.java
+
+# === Proyectos específicos (cuando se necesita más precisión) ===
 /hw/unda/U2/ScissorsDB/target/
 /hw/unda/U2/HW12Cluster0/ScissorsDB/target/
 /hw/unda/U2/ScissorCrud/target/
+/hw/unda/U2/HW13Crud/ScissorCrud/target/
 /hw/caizapanta/u2/HW13ObjectCRUD/CableCRUD/target/
+/hw/vaca/u2/MazeGenerator/target/
+
 /ws/vaca/u2/WS22InheritanceAndAbstraction/Farm/target/
 /ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
 /ws/vaca/u2/WS24/ContactBook/target/
-/hw/vaca/u2/HW13ObjectCRUD/CRUD.java/War_Game_V.4.0.0/src/main/java/ec/edu/espe/war_game/model/MongoDB.java
-/ws/vaca/u2/WS23tutoria/Farm/target/
-/ws/astudillo/U2/WS24UI/ContactBook/target/
-/ws/bonilla/U2/WS24GUI/ContactBook/target/
-/ws/andrade/u2/Workshop 24/ContactBook/target/
 /ws/sanchez/u2/WS24GUI/ContactBook/target/
+/ws/bonilla/U2/WS24GUI/ContactBook/target/
+/ws/astudillo/U2/WS24UI/ContactBook/target/
+/ws/andrade/u2/Workshop 24/ContactBook/target/
 /ws/vaca/u2/WS25Error/ContactBook/target/
-/exams/vaca/u2/Q38-51/Q38To51/target/
 /ws/sanchez/u2/WS25Menu/ContactBook/target/
 /ws/bonilla/U2/WS17Libreries/Q38to51/target/
+/ws/vaca/u2/WS23tutoria/Farm/target/
+/exams/vaca/u2/Q38-51/Q38To51/target/
 
-/hw/unda/U2/HW13Crud/ScissorCrud/target/
-<<<<<<< HEAD
 /ws/andrade/u3/Ws28/Taxes/nbproject/
 /ws/andrade/u3/Ws28/Taxes/target/
-=======
 /ws/bonilla/U3/WS28UnitTest/Taxes/nbproject/
 /ws/bonilla/U3/WS28UnitTest/Taxes/target/
->>>>>>> bfd67c76becbae0edbe4645fa3907a6fdf36644e
-/hw/vaca/u3/MazeGenerator/target/
+/ws/unda/U3/WS31.1SolidP/MazeGenerator/target/
+/ws/unda/U3/WS31SolidP/mavenproject1/target/
+
