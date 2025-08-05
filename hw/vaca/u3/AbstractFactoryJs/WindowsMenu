@@ -1,0 +1,6 @@
+class WindowsMenu extends Menu {
+    paint() {
+        console.log("Rendering a menu in Windows style");
+        return "<ul class='windows-menu'><li>Windows Menu Item</li></ul>";
+    }
+}
