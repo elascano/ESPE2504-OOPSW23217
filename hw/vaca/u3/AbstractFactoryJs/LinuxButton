@@ -1,0 +1,6 @@
+class LinuxButton extends Button {
+    paint() {
+        console.log("Rendering a button in Linux style");
+        return "<button class='linux-btn'>Linux Button</button>";
+    }
+}
