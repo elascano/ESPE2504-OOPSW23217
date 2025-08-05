@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>24</maven.compiler.release>
-        <exec.mainClass>Calculator</exec.mainClass>
+        <exec.mainClass>ec.edu.espe.calculator.controller.Calculator</exec.mainClass>
     </properties>
 </project>

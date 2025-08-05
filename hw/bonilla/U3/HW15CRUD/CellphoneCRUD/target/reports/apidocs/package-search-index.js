@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ec.edu.espe.cellphonecrud.controller"},{"l":"ec.edu.espe.cellphonecrud.model"},{"l":"ec.edu.espe.cellphonecrud.view"}];updateSearchResults();

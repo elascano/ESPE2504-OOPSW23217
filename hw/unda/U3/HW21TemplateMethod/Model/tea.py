@@ -1,4 +1,4 @@
-from model.CaffeineBeverage import CaffeineBeverage
+from model.caffeine_beverage import CaffeineBeverage
 
 class Tea(CaffeineBeverage):
     def brew(self):

@@ -1,6 +1,7 @@
 from controller.MazeGenerator import MazeGenerator
 from model.MazeModel import MazeModel
 from view.MazeASCIIPrinter import MazeASCIIPrinter
+# Author: Carlos Paillacho
 
 
 def main():
