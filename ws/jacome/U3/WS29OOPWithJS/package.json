@@ -1,0 +1,18 @@
+{
+  "name": "ws29oopwithjs",
+  "version": "1.0.0",
+  "description": "inser customers in OOP satabase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Micaela Jácome",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4",
+    "nodemon": "^3.1.10"
+  }
+}
