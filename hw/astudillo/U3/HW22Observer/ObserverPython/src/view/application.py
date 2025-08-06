@@ -29,6 +29,7 @@ class Application:
         ibm.set_price(121.00)
         ibm.set_price(120.50)
         ibm.set_price(120.75)
+        ibm.set_price(100.00)
         ibm.set_symbol("IBMTEST")
 
 if __name__ == "__main__":
