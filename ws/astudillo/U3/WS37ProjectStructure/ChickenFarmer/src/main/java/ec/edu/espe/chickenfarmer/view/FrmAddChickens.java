@@ -43,7 +43,10 @@ public class FrmAddChickens extends javax.swing.JFrame {
         txtBornOnDate = new javax.swing.JTextField();
         chkIsMolting = new javax.swing.JCheckBox();
         txtColor = new javax.swing.JTextField();
+        cmbCoop = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
+        btnOk = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +72,12 @@ public class FrmAddChickens extends javax.swing.JFrame {
         jLabel2.setText("Select chicken");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chicken 1", "Chicken 2", "Chicken 3", "Chicken 4" }));
+        jComboBox1.setToolTipText("Select a chicken to add");
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("id:");
 
@@ -78,7 +87,16 @@ public class FrmAddChickens extends javax.swing.JFrame {
 
         jLabel6.setText("Color:");
 
+        txtId.setEnabled(false);
+
+        txtBornOnDate.setEnabled(false);
+
         chkIsMolting.setText("yes");
+        chkIsMolting.setEnabled(false);
+
+        txtColor.setEnabled(false);
+
+        cmbCoop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coop A", "Coop B" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -93,13 +111,17 @@ public class FrmAddChickens extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addGap(77, 77, 77)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtColor)
                     .addComponent(chkIsMolting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtId)
-                    .addComponent(txtBornOnDate))
-                .addContainerGap(143, Short.MAX_VALUE))
+                    .addComponent(txtBornOnDate)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId))
+                .addGap(52, 52, 52))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(cmbCoop, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,18 +146,34 @@ public class FrmAddChickens extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(cmbCoop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        btnOk.setText("Ok");
+
+        btnCancel.setText("Cancel");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(btnOk)
+                .addGap(51, 51, 51)
+                .addComponent(btnCancel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 51, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOk)
+                    .addComponent(btnCancel))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,13 +189,22 @@ public class FrmAddChickens extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        
+        
+        txtId.setText("1");
+        txtBornOnDate.setText("2025/08/96");
+        txtColor.setText("white");
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,7 +242,10 @@ public class FrmAddChickens extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnOk;
     private javax.swing.JCheckBox chkIsMolting;
+    private javax.swing.JComboBox<String> cmbCoop;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
