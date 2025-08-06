@@ -1,16 +1,5 @@
-# Compiled class files
+# === Java build artifacts ===
 *.class
-
-# Log files
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files
 *.jar
 *.war
 *.nar
@@ -19,55 +8,77 @@
 *.tar.gz
 *.rar
 
-# Virtual machine crash logs
+# === Logs ===
+*.log
 hs_err_pid*
 
-# Ignorar carpetas target de distintos proyectos
+# === IDE-specific ===
+*.ctxt         # BlueJ
+.mtj.tmp/      # J2ME
+
+# === Maven/Gradle output ===
+target/
+nbproject/
+
+# === Ignorar archivos específicos ===
+/hw/vaca/u2/HW13ObjectCRUD/CRUD.java/War_Game_V.4.0.0/src/main/java/ec/edu/espe/war_game/model/MongoDB.java
+
+# === Proyectos específicos (cuando se necesita más precisión) ===
 /hw/unda/U2/ScissorsDB/target/
 /hw/unda/U2/HW12Cluster0/ScissorsDB/target/
 /hw/unda/U2/ScissorCrud/target/
+/hw/unda/U2/HW13Crud/ScissorCrud/target/
 /hw/caizapanta/u2/HW13ObjectCRUD/CableCRUD/target/
+/hw/vaca/u2/MazeGenerator/target/
+
 /ws/vaca/u2/WS22InheritanceAndAbstraction/Farm/target/
 /ws/sanchez/u2/WS22InheritanceAndAbstraction/Farm/target/
 /ws/vaca/u2/WS24/ContactBook/target/
-/hw/vaca/u2/HW13ObjectCRUD/CRUD.java/War_Game_V.4.0.0/src/main/java/ec/edu/espe/war_game/model/MongoDB.java
-/ws/vaca/u2/WS23tutoria/Farm/target/
-/ws/astudillo/U2/WS24UI/ContactBook/target/
-/ws/bonilla/U2/WS24GUI/ContactBook/target/
-/ws/andrade/u2/Workshop 24/ContactBook/target/
 /ws/sanchez/u2/WS24GUI/ContactBook/target/
+/ws/bonilla/U2/WS24GUI/ContactBook/target/
+/ws/astudillo/U2/WS24UI/ContactBook/target/
+/ws/andrade/u2/Workshop 24/ContactBook/target/
 /ws/vaca/u2/WS25Error/ContactBook/target/
-/exams/vaca/u2/Q38-51/Q38To51/target/
 /ws/sanchez/u2/WS25Menu/ContactBook/target/
 /ws/bonilla/U2/WS17Libreries/Q38to51/target/
+/ws/vaca/u2/WS23tutoria/Farm/target/
+/exams/vaca/u2/Q38-51/Q38To51/target/
 
 /hw/unda/U2/HW13Crud/ScissorCrud/target/
-<<<<<<< HEAD
 /ws/andrade/u3/Ws28/Taxes/nbproject/
 /ws/andrade/u3/Ws28/Taxes/target/
-=======
 /ws/bonilla/U3/WS28UnitTest/Taxes/nbproject/
 /ws/bonilla/U3/WS28UnitTest/Taxes/target/
->>>>>>> bfd67c76becbae0edbe4645fa3907a6fdf36644e
+/ws/unda/U3/WS31.1SolidP/MazeGenerator/target/
+/ws/unda/U3/WS31SolidP/mavenproject1/target/
+
 /hw/vaca/u3/MazeGenerator/target/
-<<<<<<< HEAD
 /ws/vaca/u3/WS30SolidP/MazeGenerator/target/
-=======
 /hw/bonilla/U3/HW16MazeGenerator/HW16MazeGenerator/target/
-<<<<<<< HEAD
->>>>>>> f8269ea6fb87b0c3b3f84eb62882ba856be716a5
-=======
 /hw/vaca/u2/HW14GraphicInterface/GraphicalSoccerPlayer.js/nbproject/private/
 /hw/vaca/u3/HW18Singleton/mavenproject1/target/
 /hw/vaca/u3/Abstract/AbstractFactory/target/
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cb4d7af97d2239529826c63c7c3cbbab39cb27ab
 =======
 <<<<<<< HEAD
-/hw/vaca/u3/HW19Composite/DPComposite/target/
 =======
+/hw/unda/U3/WH20Composite/Composite/target/
+/hw/jacome/U3/HW20Composite/CompositePattern/target/
+/hw/bonilla/U3/HW21TemplateMethod/TemplateMethod/target/
+>>>>>>> 6d41ab363ed8fce540299ca7493c92bd8d150ae9
+/hw/vaca/u3/HW19Composite/DPComposite/target/
 /hw/jacome/U3/HW21TemplateMethod/HW21TemplateMethod/target/
->>>>>>> 81273f121cbfa522ce6e2a56ed11c238599ad890
 /hw/vaca/u3/HWTemplateMethod/mavenproject1/target/
+<<<<<<< HEAD
 >>>>>>> a5c09eb1b75f87dfbf3710064cf31fb403b4b7ba
 /hw/vaca/u3/HWObserver/Observer/target/
+=======
+/hw/vaca/u3/HWStrategy/target/
+/hw/bonilla/U3/HW22Observer/Observer/target/
+/hw/bonilla/U3/HW23Strategy/Strategy/target/
+/hw/suarez/U3/HW20Composite/target/
+/hw/suarez/U3/HW21TemplateBeverages/target/
+/ws/paillacho/U3/WS34Strategy/target/
+>>>>>>> 6d41ab363ed8fce540299ca7493c92bd8d150ae9

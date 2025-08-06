@@ -13,7 +13,7 @@ class Coffee(CaffeineBeverage):
 
     def getUserInput(self):
         try:
-            answer = input("Would you like milk an dsugar with your coffee (y/n)? ")
+            answer = input("Would you like milk an sugar with your coffee (y/n)? ")
             return answer
         except Exception:
             print("Error reading input.")

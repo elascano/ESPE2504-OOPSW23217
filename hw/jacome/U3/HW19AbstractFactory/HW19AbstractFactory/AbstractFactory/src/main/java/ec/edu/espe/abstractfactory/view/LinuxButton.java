@@ -22,6 +22,10 @@ public class LinuxButton extends Button{
         System.out.println("| " + String.format("%-11s", caption) + " |");
         System.out.println("------------");
         
+<<<<<<< HEAD
 >>>>>>> a5c09eb1b75f87dfbf3710064cf31fb403b4b7ba
+=======
+>>>>>>> 1e4c7996c2a22e02abbfff4a34b99d02ef14e579
+>>>>>>> 6d41ab363ed8fce540299ca7493c92bd8d150ae9
     }
 }
