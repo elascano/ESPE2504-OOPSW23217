@@ -1,0 +1,16 @@
+{
+  "name": "oopwithjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "insert customers in OOP database",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bernardo Suarez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4"
+  }
+}
