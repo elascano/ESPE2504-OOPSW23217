@@ -1,9 +1,10 @@
 """
 Concrete Subject in the Observer pattern
-@author Gerald Astudillo
+@author Carlos Paillacho
 """
 
 from .stock import Stock
+
 
 class IBM(Stock):
     def __init__(self, symbol, price):

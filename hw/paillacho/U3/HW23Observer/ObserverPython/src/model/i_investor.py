@@ -1,6 +1,6 @@
 """
 Observer interface for the Observer pattern
-@author Carlos Paillacho
+@author Gerald Astudillo
 """
 
 from abc import ABC, abstractmethod

@@ -1,9 +1,10 @@
 """
 Subject (Observable) in the Observer pattern
-@author Gerald Astudillo
+@author Carlos Paillacho
 """
 
 from abc import ABC, abstractmethod
+
 
 class Stock(ABC):
     def __init__(self):

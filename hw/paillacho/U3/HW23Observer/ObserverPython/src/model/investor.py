@@ -1,9 +1,10 @@
 """
 Concrete Observer in the Observer pattern
-@author Gerald Astudillo
+@author Carlos Paillacho
 """
 
 from .i_investor import IInvestor
+
 
 class Investor(IInvestor):
     def __init__(self, name):

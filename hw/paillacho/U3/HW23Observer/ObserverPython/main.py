@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Main entry point for the Observer pattern demonstration
-@author Gerald Astudillo
+@author Carlos Paillacho
 """
 
 from src.view.application import Application

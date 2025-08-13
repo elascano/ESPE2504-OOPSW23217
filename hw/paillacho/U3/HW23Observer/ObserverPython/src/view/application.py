@@ -1,16 +1,16 @@
 """
 Main application class to demonstrate the Observer pattern
-@author Gerald Astudillo
+@author Carlos Paillacho
 """
 
+from model.investor import Investor
+from model.ibm import IBM
 import sys
 import os
 
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from model.ibm import IBM
-from model.investor import Investor
 
 class Application:
     @staticmethod
@@ -30,6 +30,7 @@ class Application:
         ibm.set_price(120.50)
         ibm.set_price(120.75)
         ibm.set_symbol("IBMTEST")
+
 
 if __name__ == "__main__":
     Application.main()

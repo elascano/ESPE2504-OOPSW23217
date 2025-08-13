@@ -1,28 +1,30 @@
 from abc import ABC, abstractmethod
 
+# Author: Carlos Paillacho
+
 
 class CaffeineBeverage(ABC):
-    
+
     def prepare_recipe(self):
         self.boil_water()
         self.brew()
         self.pour_in_cup()
         if self.wants_condiments():
             self.add_condiments()
-    
+
     def boil_water(self):
         print("Boiling water")
-    
+
     @abstractmethod
     def brew(self):
         pass
-    
+
     def pour_in_cup(self):
         print("Pouring in a cup")
-    
+
     @abstractmethod
     def add_condiments(self):
         pass
-    
+
     def wants_condiments(self):
         return True
