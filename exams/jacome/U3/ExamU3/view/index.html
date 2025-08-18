@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorting Strategy App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 300px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sorting Strategy App</h1>
+  <input type="text" id="inputArray" placeholder="Enter numbers separated by commas">
+  <button id="sortBtn">Sort</button>
+
+  <div id="result" style="display: none;"></div>
+
+  <script type="module">
+    const input = document.getElementById('inputArray');
+    const button = document.getElementById('sortBtn');
+    const resultDiv = document.getElementById('result');
+
+    button.addEventListener('click', async () => {
+      const rawInput = input.value.trim();
+      const numbers = rawInput
+        .split(',')
+        .map(n => parseInt(n.trim(), 10))
+        .filter(n => !isNaN(n));
+
+      if (numbers.length <= 1) {
+        alert('Please enter at least 2 numbers.');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/sort', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ array: numbers })
+        });
+
+        const data = await response.json();
+
+        resultDiv.innerHTML = `
+          <strong>Unsorted:</strong> ${data.unsorted}<br>
+          <strong>Sorted:</strong> ${data.sorted}<br>
+          <strong>Size:</strong> ${data.size}<br>
+          <strong>Algorithm:</strong> ${data.algorithm}
+        `;
+        resultDiv.style.display = 'block';
+
+      } catch (err) {
+        alert('Error contacting server. Is it running?');
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
