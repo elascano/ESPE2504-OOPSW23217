@@ -7,7 +7,7 @@ package ec.edu.espe.abstractfactory.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public abstract class Button {
 public String caption;

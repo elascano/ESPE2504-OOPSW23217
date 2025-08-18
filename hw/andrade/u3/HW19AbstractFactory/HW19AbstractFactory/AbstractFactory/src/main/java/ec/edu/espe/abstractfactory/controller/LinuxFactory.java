@@ -11,7 +11,7 @@ import ec.edu.espe.abstractfactory.view.LinuxButton;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class LinuxFactory extends GUIFactory{
 

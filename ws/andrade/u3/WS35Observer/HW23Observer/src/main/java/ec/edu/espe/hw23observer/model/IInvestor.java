@@ -6,7 +6,7 @@ package ec.edu.espe.hw23observer.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public interface IInvestor {
     void update(Stock stock, Object args);

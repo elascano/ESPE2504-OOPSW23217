@@ -6,7 +6,7 @@ import ec.edu.espe.abstractfactory.model.Button;
 
 /**
  *
- * @author Micaela Jacome DESKTOP-46VMNHU ESPE
+ * @author Julio Andrade
  */
 public class ClientApp {
 

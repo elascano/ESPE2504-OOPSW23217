@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public abstract class Stock {
     protected String symbol;

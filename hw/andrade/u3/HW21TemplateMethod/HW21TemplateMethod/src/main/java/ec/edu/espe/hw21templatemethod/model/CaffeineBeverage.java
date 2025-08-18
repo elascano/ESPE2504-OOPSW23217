@@ -7,7 +7,7 @@ package ec.edu.espe.hw21templatemethod.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public abstract class CaffeineBeverage {
     public void prepareRecipe(){

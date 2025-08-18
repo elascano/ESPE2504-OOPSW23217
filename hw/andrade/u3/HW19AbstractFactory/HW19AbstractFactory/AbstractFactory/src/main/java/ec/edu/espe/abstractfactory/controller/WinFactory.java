@@ -8,7 +8,7 @@ import ec.edu.espe.abstractfactory.view.WinButton;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class WinFactory extends GUIFactory{
 

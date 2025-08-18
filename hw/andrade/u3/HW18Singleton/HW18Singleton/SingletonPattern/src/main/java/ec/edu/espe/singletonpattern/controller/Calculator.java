@@ -8,7 +8,7 @@ import ec.edu.espe.singletonpattern.model.USTax;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class Calculator {
 

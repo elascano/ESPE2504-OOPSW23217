@@ -8,7 +8,7 @@ import ec.edu.espe.abstractfactory.model.Button;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class LinuxButton extends Button{
 

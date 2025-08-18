@@ -8,7 +8,7 @@ import ec.edu.espe.compositepattern.model.Client;
 
 /**
  *
- * @author Micaela Jacome DESKTOP-46VMNHU ESPE
+ * @author Julio Andrade
  */
 public class Setup {
 

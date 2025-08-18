@@ -2,7 +2,7 @@ package ec.edu.espe.compositepattern.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public abstract class Employee {
     protected String name = "not assigned yet";

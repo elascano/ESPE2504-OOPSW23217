@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class Tea extends CaffeineBeverage {
 

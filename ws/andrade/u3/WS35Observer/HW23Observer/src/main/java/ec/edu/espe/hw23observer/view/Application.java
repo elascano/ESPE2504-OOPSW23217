@@ -9,7 +9,7 @@ import ec.edu.espe.hw23observer.model.Investor;
 
 /**
  *
- * @author Micaela Jacome DESKTOP-46VMNHU ESPE
+ * @author Julio Andrade
  */
 public class Application {
 

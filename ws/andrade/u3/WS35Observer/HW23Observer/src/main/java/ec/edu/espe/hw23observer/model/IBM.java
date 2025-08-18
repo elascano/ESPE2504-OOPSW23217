@@ -7,7 +7,7 @@ package ec.edu.espe.hw23observer.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class IBM extends Stock {
     private String symbol;

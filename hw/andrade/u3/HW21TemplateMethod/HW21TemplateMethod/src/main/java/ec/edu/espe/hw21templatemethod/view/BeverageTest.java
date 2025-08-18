@@ -5,7 +5,7 @@ import ec.edu.espe.hw21templatemethod.model.Tea;
 
 /**
  *
- * @author Micaela Jacome DESKTOP-46VMNHU ESPE
+ * @author Julio Andrade
  */
 public class BeverageTest {
 

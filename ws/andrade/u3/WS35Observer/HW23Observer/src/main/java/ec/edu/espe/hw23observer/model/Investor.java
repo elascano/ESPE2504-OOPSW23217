@@ -7,7 +7,7 @@ package ec.edu.espe.hw23observer.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class Investor implements IInvestor {
     private String name;

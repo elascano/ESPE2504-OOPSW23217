@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class Supervisor extends Employee {
 

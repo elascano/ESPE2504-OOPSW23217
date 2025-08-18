@@ -6,7 +6,7 @@ package ec.edu.espe.singletonpattern.model;
 
 /**
  *
- * @author Micaela Jácome
+ * @author Julio Andrade
  */
 public class USTax {
 
